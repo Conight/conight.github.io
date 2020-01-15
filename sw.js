@@ -8,19 +8,20 @@ const BASE_CACHE_FILES = [
     '/showcase/',
     '/zh/showcase/',
     // assets cache
-    '/assets/',
+    '/assets/hammer.min.js',
+    '/assets/main.js',
+    '/assets/prism.js',
+    '/assets/style.css',
     '/manifest.json',
     // ico cache
     '/favicon.ico',
 ];
 
 const OFFLINE_CACHE_FILES = [
-    '/assets/',
     '/offline.html',
 ];
 
 const NOT_FOUND_CACHE_FILES = [
-    '/assets/',
     '/404.html',
 ];
 
