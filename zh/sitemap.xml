@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://conight.com/zh/about/</loc>
+    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://conight.com/zh/</loc>
+    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://conight.com/zh/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://conight.com/zh/posts/fix-python-compile-uuid-error/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/posts/fix-python-compile-uuid-error/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/posts/fix-python-compile-uuid-error/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://conight.com/zh/posts/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://conight.com/zh/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/tags/"
+                />
+  </url>
+  
+</urlset>
