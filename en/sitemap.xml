@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://conight.com/about/</loc>
-    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://conight.com/</loc>
-    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -29,6 +29,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://conight.com/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://conight.com/showcase/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/showcase/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/showcase/"
                 />
   </url>
   
