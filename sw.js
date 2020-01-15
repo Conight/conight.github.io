@@ -12,6 +12,9 @@ const BASE_CACHE_FILES = [
     '/assets/main.js',
     '/assets/prism.js',
     '/assets/style.css',
+    '/assets/leonsans/leon.js',
+    '/assets/leonsans/logo.js',
+    '/assets/leonsans/util.js',
     '/manifest.json',
     // ico cache
     '/favicon.ico',
