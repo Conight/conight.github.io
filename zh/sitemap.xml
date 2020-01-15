@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://conight.com/zh/about/</loc>
-    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -18,8 +18,23 @@
   </url>
   
   <url>
+    <loc>https://conight.com/zh/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/"
+                />
+  </url>
+  
+  <url>
     <loc>https://conight.com/zh/showcase/</loc>
-    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -33,17 +48,92 @@
   </url>
   
   <url>
-    <loc>https://conight.com/zh/</loc>
-    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
+    <loc>https://conight.com/zh/tags/centos/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://conight.com/"
+                href="https://conight.com/tags/centos/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://conight.com/zh/"
+                href="https://conight.com/zh/tags/centos/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://conight.com/zh/tags/linux/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/tags/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/tags/linux/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://conight.com/zh/posts/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://conight.com/zh/tags/python/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/tags/python/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/tags/python/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://conight.com/zh/posts/fix-python-compile-uuid-error/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/posts/fix-python-compile-uuid-error/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/posts/fix-python-compile-uuid-error/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://conight.com/zh/tags/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://conight.com/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://conight.com/zh/tags/"
                 />
   </url>
   
@@ -58,48 +148,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://conight.com/zh/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://conight.com/zh/posts/fix-python-compile-uuid-error/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://conight.com/posts/fix-python-compile-uuid-error/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://conight.com/zh/posts/fix-python-compile-uuid-error/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://conight.com/zh/posts/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://conight.com/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://conight.com/zh/posts/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://conight.com/zh/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://conight.com/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://conight.com/zh/tags/"
                 />
   </url>
   
