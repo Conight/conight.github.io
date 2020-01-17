@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Conight All Rights Reserved.</copyright>
-    <lastBuildDate>Fri, 11 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://conight.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo with PWA</title>
+      <link>https://conight.com/posts/hugo-with-progressive-web-app/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://conight.com/posts/hugo-with-progressive-web-app/</guid>
+      <description>To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
+And we will cook it with Hugo1 to make Hugo more modernization.
+Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
+After download, put it to Hugo&#39;s readable directory. Eg. /static
+Add or modify footer based Partial Templates, then add code to register Service Workers.</description>
+    </item>
     
     <item>
       <title>Compile install python raise uuid error on Centos</title>

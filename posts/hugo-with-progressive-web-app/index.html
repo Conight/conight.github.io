@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Hugo with PWA :: Conight&#39;s Blog — Share the world.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
+And we will cook it with Hugo1 to make Hugo more modernization.
+Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
+After download, put it to Hugo&#39;s readable directory. Eg. /static
+Add or modify footer based Partial Templates, then add code to register Service Workers."/>
+<meta name="keywords" content="Hugo, PWA"/>
+<meta name="robots" content="noodp"/>
+<meta name="theme-color" content="#222128">
+<link rel="canonical" href="https://conight.com/posts/hugo-with-progressive-web-app/" />
+
+
+<link rel="stylesheet" href="https://conight.com/assets/style.css">
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.json">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00475c">
+<meta name="apple-mobile-web-app-title" content="Conight's Blog">
+<meta name="application-name" content="Conight's Blog">
+<meta name="msapplication-TileColor" content="#603cba">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Hugo with PWA :: Conight&#39;s Blog — Share the world." />
+<meta name="twitter:description" content="To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
+And we will cook it with Hugo1 to make Hugo more modernization.
+Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
+After download, put it to Hugo&#39;s readable directory. Eg. /static
+Add or modify footer based Partial Templates, then add code to register Service Workers." />
+<meta name="twitter:site" content="https://conight.com/" />
+<meta name="twitter:creator" content="Conight" />
+<meta name="twitter:image" content="https://conight.com/posts_assests/attachment/hugo-with-progressive-web-app/DeviceUsage.webp">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Hugo with PWA :: Conight&#39;s Blog — Share the world.">
+<meta property="og:description" content="To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
+And we will cook it with Hugo1 to make Hugo more modernization.
+Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
+After download, put it to Hugo&#39;s readable directory. Eg. /static
+Add or modify footer based Partial Templates, then add code to register Service Workers." />
+<meta property="og:url" content="https://conight.com/posts/hugo-with-progressive-web-app/" />
+<meta property="og:site_name" content="Hugo with PWA" />
+<meta property="og:image" content="https://conight.com/posts_assests/attachment/hugo-with-progressive-web-app/DeviceUsage.webp">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2020-01-16 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+<script src="https://conight.com/assets/hammer.min.js"></script>
+<script src="https://conight.com/assets/leonsans/leon.js"></script>
+<script src="https://conight.com/assets/leonsans/util.js"></script>
+<script src="https://conight.com/assets/leonsans/logo.js"></script>
+<script src="https://conight.com/assets/reg_sw.js"></script>
+
+
+</head>
+<body class="">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+    <div class="logo">
+        <div style="display: none" id="logo-text">
+            Conight
+        </div>
+        <canvas id="logo-canvas" width="150" height="35"></canvas>
+    </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    
+
+    
+    <div class="spacer"></div>
+    <ul class="language-selector">
+      <ul class="language-selector-current">
+          <li>English ▾</li>
+      </ul>
+      <ul class="language-selector__more hidden">
+        
+        <li><a href="https://conight.com/">English</a></li>
+        
+        <li><a href="https://conight.com/zh/">Chinese</a></li>
+        
+      </ul>
+    </ul>
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+    
+    <hr />
+        
+          <li>
+            <a href="https://conight.com/">English</a>
+          </li>
+        
+          <li>
+            <a href="https://conight.com/zh/">Chinese</a>
+          </li>
+        
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://conight.com/posts/hugo-with-progressive-web-app/">Hugo with PWA</a></h1>
+  <div class="post-meta">
+      
+    <span class="post-date">
+      2020-01-16
+    </span>
+    
+    
+    <span class="post-author">::
+      Conight
+    </span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://conight.com/tags/hugo/">Hugo</a>&nbsp;
+    
+    #<a href="https://conight.com/tags/pwa/">PWA</a>&nbsp;
+    
+    #<a href="https://conight.com/tags/web/">WEB</a>&nbsp;
+    
+  </span>
+  
+
+  
+  <img src="https://conight.com/posts_assests/attachment/hugo-with-progressive-web-app/DeviceUsage.webp" class="post-cover" />
+  
+
+  <div class="post-content">
+    <p>To make the web experience closer to native applications,
+Google introduced the concept of <code>Progressive Web App (PWA)</code> at 2016.</p>
+<p>And we will cook it with Hugo<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> to make Hugo more modernization.</p>
+<h1 id="service-workers">Service Workers</h1>
+<h2 id="register">Register</h2>
+<p>First we add <code>sw.js</code> from <a href="https://github.com/wildhaber/offline-first-sw">offline-first-sw</a> make Hugo support <code>Service Workers</code>.</p>
+<p>After download, put it to Hugo's readable directory. Eg. <code>/static</code></p>
+<p>Add or modify <code>footer</code> based <code>Partial Templates</code>, then add code to register <code>Service Workers</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span>(<span style="color:#e6db74">&#39;serviceWorker&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">navigator</span>) {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PREFETCH</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PREFETCH_LINK_RELS</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;index&#39;</span>,<span style="color:#e6db74">&#39;next&#39;</span>, <span style="color:#e6db74">&#39;prev&#39;</span>, <span style="color:#e6db74">&#39;prefetch&#39;</span>];
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">prefetchCache</span>() {
+        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">serviceWorker</span>.<span style="color:#a6e22e">controller</span>) {
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">links</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(
+                <span style="color:#a6e22e">PREFETCH_LINK_RELS</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">rel</span>) =&gt; {
+                    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;link[rel=&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">rel</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;]&#39;</span>;
+                }).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;,&#39;</span>)
+            );
+            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">links</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+                Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">links</span>)
+                    .<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">link</span>) =&gt; {
+                        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">link</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;href&#39;</span>);
+                        <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">serviceWorker</span>.<span style="color:#a6e22e">controller</span>.<span style="color:#a6e22e">postMessage</span>({
+                            <span style="color:#a6e22e">action</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;cache&#39;</span>,
+                            <span style="color:#a6e22e">url</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">href</span>,
+                        });
+                    });
+            }
+        }
+    }
+
+    <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">serviceWorker</span>
+        .<span style="color:#a6e22e">register</span>(<span style="color:#e6db74">&#39;/sw.js&#39;</span>, { <span style="color:#a6e22e">scope</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/&#39;</span> })
+        .<span style="color:#a6e22e">then</span>(() =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Service Worker Registered&#39;</span>);
+        });
+
+    <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">serviceWorker</span>
+        .<span style="color:#a6e22e">ready</span>
+        .<span style="color:#a6e22e">then</span>(() =&gt; {
+            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">PREFETCH</span>) {
+                <span style="color:#a6e22e">prefetchCache</span>();
+            }
+        });
+}
+</code></pre></div><h2 id="configuration">Configuration</h2>
+<h3 id="cache_version--number-">CACHE_VERSION <code>{ number }</code></h3>
+<blockquote>
+<p>The CACHE_VERSION is important when you update your service-worker. The cache-location will be updated and the old legacy cache is getting deleted.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CACHE_VERSION</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</code></pre></div><h3 id="base_cache_files--array-">BASE_CACHE_FILES <code>{ array }</code></h3>
+<blockquote>
+<p>Define files that in this list which always needs to be cached from the beginning.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">BASE_CACHE_FILES</span> <span style="color:#f92672">=</span> [
+    <span style="color:#75715e">// page cache
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;/&#39;</span>,
+    <span style="color:#e6db74">&#39;/about/&#39;</span>,
+    <span style="color:#e6db74">&#39;/zh/about/&#39;</span>,
+    <span style="color:#e6db74">&#39;/showcase/&#39;</span>,
+    <span style="color:#e6db74">&#39;/zh/showcase/&#39;</span>,
+    <span style="color:#75715e">// assets cache
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;/assets/main.js&#39;</span>,
+    <span style="color:#e6db74">&#39;/assets/prism.js&#39;</span>,
+    <span style="color:#e6db74">&#39;/assets/style.css&#39;</span>,
+    <span style="color:#e6db74">&#39;/manifest.json&#39;</span>,
+    <span style="color:#75715e">// ico cache
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;/favicon.ico&#39;</span>,
+];
+</code></pre></div><h3 id="offline_cache_files--array-">OFFLINE_CACHE_FILES <code>{ array }</code></h3>
+<blockquote>
+<p>Define files necessary for your offline page.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">OFFLINE_CACHE_FILES</span> <span style="color:#f92672">=</span> [
+    <span style="color:#e6db74">&#39;/offline.html&#39;</span>,
+];
+</code></pre></div><h3 id="not_found_cache_files--array-">NOT_FOUND_CACHE_FILES <code>{ array }</code></h3>
+<blockquote>
+<p>Define files necessary for your 404 page.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">NOT_FOUND_CACHE_FILES</span> <span style="color:#f92672">=</span> [
+    <span style="color:#e6db74">&#39;/404.html&#39;</span>,
+];
+</code></pre></div><h3 id="cache_blacklist--array">CACHE_BLACKLIST <code>{ array}</code></h3>
+<blockquote>
+<p>This is a list of functions a URL gets checked against if it should be cached or not.
+If one method returns true this resource will not be cached.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CACHE_BLACKLIST</span> <span style="color:#f92672">=</span> [
+    (<span style="color:#a6e22e">str</span>) =&gt; {
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#e6db74">&#39;https://conight.com&#39;</span>);
+        <span style="color:#75715e">// return !str.startsWith(&#39;http://localhost&#39;) &amp;&amp; !str.startsWith(&#39;https://conight.com&#39;);
+</span><span style="color:#75715e"></span>    },
+];
+</code></pre></div><p>It will cache all you specified resource or path.
+You'll find it in Chrome's <code>Developer's Tools -&gt; Cache Storage</code> tab.</p>
+<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Cache.webp" alt="Cache Storage" title="Cache Storage">
+<em>Cache Storage</em></p>
+<h1 id="manifestjson">manifest.json</h1>
+<p><code>manifest</code> is a decliner file to tell browser how is your PWA look like,.
+You can find all manifest properties at <a href="https://developers.google.com/web/fundamentals/web-app-manifest/">Official website</a> 。</p>
+<p>My blog's <code>manifest</code> blow:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Conight&#39;s Blog&#34;</span>,
+  <span style="color:#f92672">&#34;short_name&#34;</span>: <span style="color:#e6db74">&#34;Conight&#39;s Blog&#34;</span>,
+  <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Share the world.&#34;</span>,
+  <span style="color:#f92672">&#34;icons&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;src&#34;</span>: <span style="color:#e6db74">&#34;/android-chrome-192x192.png&#34;</span>,
+      <span style="color:#f92672">&#34;sizes&#34;</span>: <span style="color:#e6db74">&#34;192x192&#34;</span>,
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;image/png&#34;</span>
+    },
+    {
+      <span style="color:#f92672">&#34;src&#34;</span>: <span style="color:#e6db74">&#34;/android-chrome-512x512.png&#34;</span>,
+      <span style="color:#f92672">&#34;sizes&#34;</span>: <span style="color:#e6db74">&#34;512x512&#34;</span>,
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;image/png&#34;</span>
+    }
+  ],
+  <span style="color:#f92672">&#34;start_url&#34;</span>: <span style="color:#e6db74">&#34;/&#34;</span>,
+  <span style="color:#f92672">&#34;display&#34;</span>: <span style="color:#e6db74">&#34;standalone&#34;</span>,
+  <span style="color:#f92672">&#34;orientation&#34;</span>: <span style="color:#e6db74">&#34;portrait&#34;</span>,
+  <span style="color:#f92672">&#34;background_color&#34;</span>: <span style="color:#e6db74">&#34;#222128&#34;</span>,
+  <span style="color:#f92672">&#34;theme_color&#34;</span>: <span style="color:#e6db74">&#34;#222128&#34;</span>
+}
+</code></pre></div><ul>
+<li>You must provide at least the <code>short_name</code> or <code>name</code> property.</li>
+<li><code>icons</code> is an array of image objects. Each object should include the src, a sizes property, and the type of image.
+You can use online tools if you like: <a href="https://favicomatic.com/">favicomatic.com</a> or <a href="https://realfavicongenerator.net/">realfavicongenerator.net</a>.</li>
+</ul>
+<p>Then put it in <code>head</code> template:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manifest&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/manifest.json&#34;</span>&gt;
+</code></pre></div><ul>
+<li>It will automatic contain <code>manifest</code> file if you use <a href="https://realfavicongenerator.net/">realfavicongenerator.net</a>.</li>
+</ul>
+<h1 id="lighthouse">Lighthouse</h1>
+<blockquote>
+<p>Lighthouse, an open-source, automated tool for improving the quality of your Progressive Web Apps,
+eliminates much of the manual testing that was previously required.
+You can even use Lighthouse in continuous integration systems to catch regressions.</p>
+</blockquote>
+<p>Enter Chrome's <code>Developer's Tools -&gt; Audits</code>, and check <code>Progressive Web Apps</code>.
+After tests, it will show you website's report.</p>
+<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Lighthouse.webp" alt="Lighthouse" title="Lighthouse">
+<em>Lighthouse PWA Audits</em></p>
+<p>If configure right, browser which support PWA will show <code>Install</code> button or notice you add to desktop.</p>
+<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/InstallNotice.webp" alt="Install Notice" title="InstallNotice">
+<em>Install Notice</em></p>
+<p>If not, Enter Chrome's <code>Developer's Tools -&gt; Manifest</code> and <code>Installability</code> may show reason.</p>
+<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Installability.webp" alt="Installability" title="Installability">
+<em>Manifest Installability</em></p>
+<h2 id="expand">Expand</h2>
+<ul>
+<li><a href="https://blog.jeremylikness.com/blog/implement-progressive-web-app-hugo/">Implement a Progressive Web App (PWA) in your Static Website</a></li>
+<li><a href="https://github.com/wildhaber/offline-first-sw">offline-first-sw</a></li>
+<li><a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web Apps</a></li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><code>Golang</code> Based static blog framework. <a href="https://gohugo.io/" title="Hugo">Official website</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      
+      <span class="button next">
+        <a href="https://conight.com/posts/fix-python-compile-uuid-error/">
+          <span class="button__text">Compile install python raise uuid error on Centos</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      
+    </div>
+  </div>
+  
+
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "conightblog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2020 Conight All Rights Reserved.</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://conight.com/assets/main.js"></script>
+<script src="https://conight.com/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

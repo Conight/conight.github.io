@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   
-    <title>Python源码编译时uuid模块报错 :: Conight&#39;s Blog — Share the world.</title>
+    <title>Python 源码编译时 uuid 模块报错 :: Conight&#39;s Blog — Share the world.</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -27,7 +27,6 @@ building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00475c">
 <meta name="apple-mobile-web-app-title" content="Conight's Blog">
 <meta name="application-name" content="Conight's Blog">
@@ -36,7 +35,7 @@ building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result
 
 
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Python源码编译时uuid模块报错 :: Conight&#39;s Blog — Share the world." />
+<meta name="twitter:title" content="Python 源码编译时 uuid 模块报错 :: Conight&#39;s Blog — Share the world." />
 <meta name="twitter:description" content="系统环境 CentOS Linux release 7.6.1810 (Core) gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) Python-3.7.2 uuid-devel.x86_64 1.6.2-26.el7 场景 描述 在 Centos7 通过源码编译安装 Python 3.7.2 ，出现以下错误
 building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std=c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror=implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0: /usr/include/uuid.h:94:24: error: conflicting types for ‘uuid_t’ typedef struct uuid_st uuid_t; ^ In file included from /home/tt/Python-3." />
 <meta name="twitter:site" content="https://conight.com/" />
@@ -46,11 +45,11 @@ building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result
 
 <meta property="og:locale" content="zh" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Python源码编译时uuid模块报错 :: Conight&#39;s Blog — Share the world.">
+<meta property="og:title" content="Python 源码编译时 uuid 模块报错 :: Conight&#39;s Blog — Share the world.">
 <meta property="og:description" content="系统环境 CentOS Linux release 7.6.1810 (Core) gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) Python-3.7.2 uuid-devel.x86_64 1.6.2-26.el7 场景 描述 在 Centos7 通过源码编译安装 Python 3.7.2 ，出现以下错误
 building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std=c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror=implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0: /usr/include/uuid.h:94:24: error: conflicting types for ‘uuid_t’ typedef struct uuid_st uuid_t; ^ In file included from /home/tt/Python-3." />
 <meta property="og:url" content="https://conight.com/zh/posts/fix-python-compile-uuid-error/" />
-<meta property="og:site_name" content="Python源码编译时uuid模块报错" />
+<meta property="og:site_name" content="Python 源码编译时 uuid 模块报错" />
 <meta property="og:image" content="">
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
@@ -159,7 +158,7 @@ building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result
     
 <div class="post">
   <h1 class="post-title">
-    <a href="https://conight.com/zh/posts/fix-python-compile-uuid-error/">Python源码编译时uuid模块报错</a></h1>
+    <a href="https://conight.com/zh/posts/fix-python-compile-uuid-error/">Python 源码编译时 uuid 模块报错</a></h1>
   <div class="post-meta">
       
     <span class="post-date">
@@ -259,6 +258,25 @@ _uuid
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">patch -p0 &lt; uuidmodule.patch
 </code></pre></div><p>就可以继续愉快的 <code>make</code> 了！大功告成</p>
 
+  </div>
+  
+  <div class="pagination">
+    <div class="pagination__title">
+      <span
+        class="pagination__title-h">Read other posts</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      
+      <span class="button previous">
+        <a href="https://conight.com/zh/posts/hugo-with-progressive-web-app/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Hugo 与 PWA</span>
+        </a>
+      </span>
+      
+      
+    </div>
   </div>
   
 
