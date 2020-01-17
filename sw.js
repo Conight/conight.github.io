@@ -1,4 +1,4 @@
-const CACHE_VERSION = 0.4;
+const CACHE_VERSION = 0.5;
 
 const BASE_CACHE_FILES = [
     // page cache
