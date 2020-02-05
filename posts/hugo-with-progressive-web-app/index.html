@@ -9,12 +9,13 @@
 <meta name="description" content="To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
 And we will cook it with Hugo1 to make Hugo more modernization.
 Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
-After download, put it to Hugo&#39;s readable directory. Eg. /static
+After download, put it to Hugo&amp;rsquo;s readable directory. Eg. /static
 Add or modify footer based Partial Templates, then add code to register Service Workers."/>
 <meta name="keywords" content="Hugo, PWA"/>
 <meta name="robots" content="noodp"/>
 <meta name="theme-color" content="#222128">
 <link rel="canonical" href="https://conight.com/posts/hugo-with-progressive-web-app/" />
+<script data-ad-client="ca-pub-9402374999951815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 <link rel="stylesheet" href="https://conight.com/assets/style.css">
@@ -42,7 +43,7 @@ Add or modify footer based Partial Templates, then add code to register Service 
 <meta name="twitter:description" content="To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
 And we will cook it with Hugo1 to make Hugo more modernization.
 Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
-After download, put it to Hugo&#39;s readable directory. Eg. /static
+After download, put it to Hugo&amp;rsquo;s readable directory. Eg. /static
 Add or modify footer based Partial Templates, then add code to register Service Workers." />
 <meta name="twitter:site" content="https://conight.com/" />
 <meta name="twitter:creator" content="Conight" />
@@ -55,7 +56,7 @@ Add or modify footer based Partial Templates, then add code to register Service 
 <meta property="og:description" content="To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
 And we will cook it with Hugo1 to make Hugo more modernization.
 Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
-After download, put it to Hugo&#39;s readable directory. Eg. /static
+After download, put it to Hugo&amp;rsquo;s readable directory. Eg. /static
 Add or modify footer based Partial Templates, then add code to register Service Workers." />
 <meta property="og:url" content="https://conight.com/posts/hugo-with-progressive-web-app/" />
 <meta property="og:site_name" content="Hugo with PWA" />
@@ -204,7 +205,7 @@ Google introduced the concept of <code>Progressive Web App (PWA)</code> at 2016.
 <h1 id="service-workers">Service Workers</h1>
 <h2 id="register">Register</h2>
 <p>First we add <code>sw.js</code> from <a href="https://github.com/wildhaber/offline-first-sw">offline-first-sw</a> make Hugo support <code>Service Workers</code>.</p>
-<p>After download, put it to Hugo's readable directory. Eg. <code>/static</code></p>
+<p>After download, put it to Hugo&rsquo;s readable directory. Eg. <code>/static</code></p>
 <p>Add or modify <code>footer</code> based <code>Partial Templates</code>, then add code to register <code>Service Workers</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span>(<span style="color:#e6db74">&#39;serviceWorker&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">navigator</span>) {
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PREFETCH</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
@@ -294,13 +295,13 @@ If one method returns true this resource will not be cached.</p>
 </span><span style="color:#75715e"></span>    },
 ];
 </code></pre></div><p>It will cache all you specified resource or path.
-You'll find it in Chrome's <code>Developer's Tools -&gt; Cache Storage</code> tab.</p>
+You&rsquo;ll find it in Chrome&rsquo;s <code>Developer's Tools -&gt; Cache Storage</code> tab.</p>
 <p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Cache.webp" alt="Cache Storage" title="Cache Storage">
 <em>Cache Storage</em></p>
 <h1 id="manifestjson">manifest.json</h1>
 <p><code>manifest</code> is a decliner file to tell browser how is your PWA look like,.
 You can find all manifest properties at <a href="https://developers.google.com/web/fundamentals/web-app-manifest/">Official website</a> 。</p>
-<p>My blog's <code>manifest</code> blow:</p>
+<p>My blog&rsquo;s <code>manifest</code> blow:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Conight&#39;s Blog&#34;</span>,
   <span style="color:#f92672">&#34;short_name&#34;</span>: <span style="color:#e6db74">&#34;Conight&#39;s Blog&#34;</span>,
@@ -339,14 +340,14 @@ You can use online tools if you like: <a href="https://favicomatic.com/">favicom
 eliminates much of the manual testing that was previously required.
 You can even use Lighthouse in continuous integration systems to catch regressions.</p>
 </blockquote>
-<p>Enter Chrome's <code>Developer's Tools -&gt; Audits</code>, and check <code>Progressive Web Apps</code>.
-After tests, it will show you website's report.</p>
+<p>Enter Chrome&rsquo;s <code>Developer's Tools -&gt; Audits</code>, and check <code>Progressive Web Apps</code>.
+After tests, it will show you website&rsquo;s report.</p>
 <p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Lighthouse.webp" alt="Lighthouse" title="Lighthouse">
 <em>Lighthouse PWA Audits</em></p>
 <p>If configure right, browser which support PWA will show <code>Install</code> button or notice you add to desktop.</p>
 <p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/InstallNotice.webp" alt="Install Notice" title="InstallNotice">
 <em>Install Notice</em></p>
-<p>If not, Enter Chrome's <code>Developer's Tools -&gt; Manifest</code> and <code>Installability</code> may show reason.</p>
+<p>If not, Enter Chrome&rsquo;s <code>Developer's Tools -&gt; Manifest</code> and <code>Installability</code> may show reason.</p>
 <p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Installability.webp" alt="Installability" title="Installability">
 <em>Manifest Installability</em></p>
 <h2 id="expand">Expand</h2>

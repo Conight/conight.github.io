@@ -21,7 +21,7 @@
       <description>To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
 And we will cook it with Hugo1 to make Hugo more modernization.
 Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
-After download, put it to Hugo&#39;s readable directory. Eg. /static
+After download, put it to Hugo&amp;rsquo;s readable directory. Eg. /static
 Add or modify footer based Partial Templates, then add code to register Service Workers.</description>
     </item>
     
