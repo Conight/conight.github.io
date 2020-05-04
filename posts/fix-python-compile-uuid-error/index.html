@@ -223,7 +223,7 @@ In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:5:0:
  <span style="color:#f92672">}</span>
  ^
 
-The following modules found by detect_modules<span style="color:#f92672">(</span><span style="color:#f92672">)</span> in setup.py, have been
+The following modules found by detect_modules<span style="color:#f92672">()</span> in setup.py, have been
 built by the Makefile instead, as configured by the Setup files:
 _abc                  atexit                pwd                
 time                                                           
@@ -245,7 +245,7 @@ Just remove one to fix this.</p>
 <p>Change source code in <code>Modules/_uuidmodule.c</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vi Modules/_uuidmodule.c
 </code></pre></div><p>Delete line 6 and change line 7 as blow</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">elif defined(HAVE_UUID_H)</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#elif defined(HAVE_UUID_H)
 </span></code></pre></div><p>or patch this file</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-patch" data-lang="patch"><span style="color:#f92672">--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Modules/_uuidmodule.c       2019-01-11 15:39:04.470000000 -0500
@@ -254,7 +254,7 @@ Just remove one to fix this.</p>
  #ifdef HAVE_UUID_UUID_H
  #include &lt;uuid/uuid.h&gt;
 <span style="color:#f92672">-#endif
-</span><span style="color:#f92672"></span><span style="color:#f92672">-#ifdef HAVE_UUID_H
+</span><span style="color:#f92672">-#ifdef HAVE_UUID_H
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+#elif defined(HAVE_UUID_H)
 </span><span style="color:#a6e22e"></span> #include &lt;uuid.h&gt;
  #endif
