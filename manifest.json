@@ -1,7 +1,8 @@
 {
   "name": "Conight's Blog",
-  "short_name": "Conight's Blog",
-  "description": "Share the world.",
+  "short_name": "Blog",
+  "description": "Conight's Blog",
+  "start_url": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -12,11 +13,41 @@
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "maskable_icon.png",
+      "sizes": "888x888",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": "/",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#222128",
-  "theme_color": "#222128"
+  "shortcuts": [
+    {
+      "name": "Chinese Site",
+      "short_name": "Chinese",
+      "description": "View Chinese Site",
+      "url": "/zh/",
+      "icons": [
+        {
+          "src": "/shortcuts/zoology.png",
+          "sizes": "512x512"
+        }
+      ]
+    },
+    {
+      "name": "English Site",
+      "short_name": "English",
+      "description": "View English Site",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/shortcuts/bird.png",
+          "sizes": "512x512"
+        }
+      ]
+    }
+  ]
 }
