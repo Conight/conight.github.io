@@ -19,10 +19,11 @@
       
       <guid>https://conight.com/posts/hugo-with-progressive-web-app/</guid>
       <description>To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
-And we will cook it with Hugo1 to make Hugo more modernization.
+We will cook it with Hugo1 to make Hugo more modernization.
 Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
 After download, put it to Hugo&amp;rsquo;s readable directory. Eg. /static
-Add or modify footer based Partial Templates, then add code to register Service Workers.</description>
+Add or modify footer based Partial Templates, then add code to register Service Workers.
+if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator.</description>
     </item>
     
     <item>
@@ -41,6 +42,15 @@ Add or modify footer based Partial Templates, then add code to register Service 
       
       <guid>https://conight.com/showcase/</guid>
       <description>Hi there Showcase</description>
+    </item>
+    
+    <item>
+      <title>Oops, you are offline.</title>
+      <link>https://conight.com/offline/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://conight.com/offline/</guid>
+      <description>You should try to find some internet connection to browse here.</description>
     </item>
     
     <item>

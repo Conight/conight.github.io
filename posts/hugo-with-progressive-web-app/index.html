@@ -1,41 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-    <title>Hugo with PWA :: Conight&#39;s Blog — Share the world.</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+        <title>Hugo with PWA :: Conight&#39;s Blog — Share the world.</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
-And we will cook it with Hugo1 to make Hugo more modernization.
+We will cook it with Hugo1 to make Hugo more modernization.
 Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
 After download, put it to Hugo&amp;rsquo;s readable directory. Eg. /static
-Add or modify footer based Partial Templates, then add code to register Service Workers."/>
-<meta name="keywords" content="Hugo, PWA"/>
-<meta name="robots" content="noodp"/>
-<meta name="theme-color" content="#222128">
+Add or modify footer based Partial Templates, then add code to register Service Workers.
+if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator." />
+<meta name="keywords" content="Hugo, PWA" />
+<meta name="robots" content="noodp" />
 <link rel="canonical" href="https://conight.com/posts/hugo-with-progressive-web-app/" />
+
 
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-132063311-1', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-<script data-ad-client="ca-pub-9402374999951815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<link rel="stylesheet" href="https://conight.com/assets/pattern.min.css">
 
 <link rel="stylesheet" href="https://conight.com/assets/style.css">
 
 
 
 
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://conight.com/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="https://conight.com/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="@ConightW" />
+
+<meta name="twitter:creator" content="@ConightW" />
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Hugo with PWA :: Conight&#39;s Blog">
+<meta property="og:description" content="Progressive Web App (PWA) cook with Hugo." />
+<meta property="og:url" content="https://conight.com/posts/hugo-with-progressive-web-app/" />
+<meta property="og:site_name" content="Hugo with PWA" />
+
+  <meta property="og:image" content="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2020-01-16 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:image" content="https://conight.com/apple-touch-icon.png" />
+
+
+<meta name="theme-color" content="#222128">
+
+
+<link rel="stylesheet" href="/assets/pattern.min.css">
 
 
 <link rel="manifest" href="/manifest.json">
@@ -50,48 +98,22 @@ if (!doNotTrack) {
 <meta name="msapplication-TileColor" content="#603cba">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Hugo with PWA :: Conight&#39;s Blog — Share the world." />
-<meta name="twitter:description" content="To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
-And we will cook it with Hugo1 to make Hugo more modernization.
-Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
-After download, put it to Hugo&amp;rsquo;s readable directory. Eg. /static
-Add or modify footer based Partial Templates, then add code to register Service Workers." />
-<meta name="twitter:site" content="https://conight.com/" />
-<meta name="twitter:creator" content="Conight" />
-<meta name="twitter:image" content="https://conight.com/posts_assests/attachment/hugo-with-progressive-web-app/DeviceUsage.webp">
+<script data-ad-client="ca-pub-9402374999951815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="/assets/hammer.min.js"></script>
+<script src="/assets/leonsans/leon.js"></script>
+<script src="/assets/leonsans/util.js"></script>
+<script src="/assets/leonsans/logo.js"></script>
+<script src="/assets/reg_sw.js"></script>
 
 
-<meta property="og:locale" content="en" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Hugo with PWA :: Conight&#39;s Blog — Share the world.">
-<meta property="og:description" content="To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
-And we will cook it with Hugo1 to make Hugo more modernization.
-Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
-After download, put it to Hugo&amp;rsquo;s readable directory. Eg. /static
-Add or modify footer based Partial Templates, then add code to register Service Workers." />
-<meta property="og:url" content="https://conight.com/posts/hugo-with-progressive-web-app/" />
-<meta property="og:site_name" content="Hugo with PWA" />
-<meta property="og:image" content="https://conight.com/posts_assests/attachment/hugo-with-progressive-web-app/DeviceUsage.webp">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2020-01-16 00:00:00 &#43;0000 UTC" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Progressive Web App (PWA) cook with Hugo.">
+        <meta name="twitter:image" content="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp">
+        
+    <meta name="twitter:creator" content="@ConightW">
 
 
 
-
-
-
-
-
-
-<script src="https://conight.com/assets/hammer.min.js"></script>
-<script src="https://conight.com/assets/leonsans/leon.js"></script>
-<script src="https://conight.com/assets/leonsans/util.js"></script>
-<script src="https://conight.com/assets/leonsans/logo.js"></script>
-<script src="https://conight.com/assets/reg_sw.js"></script>
 
 
 </head>
@@ -100,11 +122,11 @@ Add or modify footer based Partial Templates, then add code to register Service 
 
 <div class="container headings--one-size">
 
-  <header class="header">
+    <header class="header">
   <div class="header__inner">
     <div class="header__logo">
       <a href="/">
-    <div class="logo">
+    <div class="logo" style="background: none">
         <div style="display: none" id="logo-text">
             Conight
         </div>
@@ -177,46 +199,48 @@ Add or modify footer based Partial Templates, then add code to register Service 
 </header>
 
 
-  <div class="content">
-    
-<div class="post">
-  <h1 class="post-title">
-    <a href="https://conight.com/posts/hugo-with-progressive-web-app/">Hugo with PWA</a></h1>
-  <div class="post-meta">
+    <div class="content">
+        
+  <div class="post">
+    <h1 class="post-title">
+      <a href="https://conight.com/posts/hugo-with-progressive-web-app/">Hugo with PWA</a></h1>
+    <div class="post-meta">
       
-    <span class="post-date">
-      2020-01-16
-    </span>
-    
-    
-    <span class="post-author">::
+        <span class="post-date">
+        2020-01-16 [Updated: 2020-01-16]
+      </span>
+      
+      
+        <span class="post-author">::
       Conight
     </span>
-    
-  </div>
+      
+    </div>
 
-  
-  <span class="post-tags">
     
-    #<a href="https://conight.com/tags/hugo/">Hugo</a>&nbsp;
+      <span class="post-tags">
     
-    #<a href="https://conight.com/tags/pwa/">PWA</a>&nbsp;
+      #<a href="https://conight.com/tags/hugo/">Hugo</a>&nbsp;
     
-    #<a href="https://conight.com/tags/web/">WEB</a>&nbsp;
+      #<a href="https://conight.com/tags/pwa/">PWA</a>&nbsp;
+    
+      #<a href="https://conight.com/tags/web/">WEB</a>&nbsp;
     
   </span>
-  
+    
 
-  
-  <img src="https://conight.com/posts_assests/attachment/hugo-with-progressive-web-app/DeviceUsage.webp" class="post-cover" />
-  
+    
+      <img src="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp" class="post-cover" alt="Hugo with PWA" />
+    
 
-  <div class="post-content">
-    <p>To make the web experience closer to native applications,
+    
+
+    <div class="post-content"><div>
+          <p>To make the web experience closer to native applications,
 Google introduced the concept of <code>Progressive Web App (PWA)</code> at 2016.</p>
-<p>And we will cook it with Hugo<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> to make Hugo more modernization.</p>
-<h1 id="service-workers">Service Workers</h1>
-<h2 id="register">Register</h2>
+<p>We will cook it with Hugo<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> to make Hugo more modernization.</p>
+<h1 id="service-workers">Service Workers<a href="#service-workers" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="register">Register<a href="#register" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>First we add <code>sw.js</code> from <a href="https://github.com/wildhaber/offline-first-sw">offline-first-sw</a> make Hugo support <code>Service Workers</code>.</p>
 <p>After download, put it to Hugo&rsquo;s readable directory. Eg. <code>/static</code></p>
 <p>Add or modify <code>footer</code> based <code>Partial Templates</code>, then add code to register <code>Service Workers</code>.</p>
@@ -257,13 +281,13 @@ Google introduced the concept of <code>Progressive Web App (PWA)</code> at 2016.
             }
         });
 }
-</code></pre></div><h2 id="configuration">Configuration</h2>
-<h3 id="cache_version--number-">CACHE_VERSION <code>{ number }</code></h3>
+</code></pre></div><h2 id="configuration">Configuration<a href="#configuration" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h3 id="cache_version--number-">CACHE_VERSION <code>{ number }</code><a href="#cache_version--number-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <blockquote>
 <p>The CACHE_VERSION is important when you update your service-worker. The cache-location will be updated and the old legacy cache is getting deleted.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CACHE_VERSION</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-</code></pre></div><h3 id="base_cache_files--array-">BASE_CACHE_FILES <code>{ array }</code></h3>
+</code></pre></div><h3 id="base_cache_files--array-">BASE_CACHE_FILES <code>{ array }</code><a href="#base_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <blockquote>
 <p>Define files that in this list which always needs to be cached from the beginning.</p>
 </blockquote>
@@ -282,21 +306,21 @@ Google introduced the concept of <code>Progressive Web App (PWA)</code> at 2016.
     <span style="color:#75715e">// ico cache
 </span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;/favicon.ico&#39;</span>,
 ];
-</code></pre></div><h3 id="offline_cache_files--array-">OFFLINE_CACHE_FILES <code>{ array }</code></h3>
+</code></pre></div><h3 id="offline_cache_files--array-">OFFLINE_CACHE_FILES <code>{ array }</code><a href="#offline_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <blockquote>
 <p>Define files necessary for your offline page.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">OFFLINE_CACHE_FILES</span> <span style="color:#f92672">=</span> [
     <span style="color:#e6db74">&#39;/offline.html&#39;</span>,
 ];
-</code></pre></div><h3 id="not_found_cache_files--array-">NOT_FOUND_CACHE_FILES <code>{ array }</code></h3>
+</code></pre></div><h3 id="not_found_cache_files--array-">NOT_FOUND_CACHE_FILES <code>{ array }</code><a href="#not_found_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <blockquote>
 <p>Define files necessary for your 404 page.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">NOT_FOUND_CACHE_FILES</span> <span style="color:#f92672">=</span> [
     <span style="color:#e6db74">&#39;/404.html&#39;</span>,
 ];
-</code></pre></div><h3 id="cache_blacklist--array">CACHE_BLACKLIST <code>{ array}</code></h3>
+</code></pre></div><h3 id="cache_blacklist--array">CACHE_BLACKLIST <code>{ array}</code><a href="#cache_blacklist--array" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <blockquote>
 <p>This is a list of functions a URL gets checked against if it should be cached or not.
 If one method returns true this resource will not be cached.</p>
@@ -309,9 +333,9 @@ If one method returns true this resource will not be cached.</p>
 ];
 </code></pre></div><p>It will cache all you specified resource or path.
 You&rsquo;ll find it in Chrome&rsquo;s <code>Developer's Tools -&gt; Cache Storage</code> tab.</p>
-<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Cache.webp" alt="Cache Storage" title="Cache Storage">
+<p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/Cache.webp" alt="Cache Storage" title="Cache Storage">
 <em>Cache Storage</em></p>
-<h1 id="manifestjson">manifest.json</h1>
+<h1 id="manifestjson">manifest.json<a href="#manifestjson" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p><code>manifest</code> is a decliner file to tell browser how is your PWA look like,.
 You can find all manifest properties at <a href="https://developers.google.com/web/fundamentals/web-app-manifest/">Official website</a> 。</p>
 <p>My blog&rsquo;s <code>manifest</code> blow:</p>
@@ -347,7 +371,7 @@ You can use online tools if you like: <a href="https://favicomatic.com/">favicom
 </code></pre></div><ul>
 <li>It will automatic contain <code>manifest</code> file if you use <a href="https://realfavicongenerator.net/">realfavicongenerator.net</a>.</li>
 </ul>
-<h1 id="lighthouse">Lighthouse</h1>
+<h1 id="lighthouse">Lighthouse<a href="#lighthouse" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <blockquote>
 <p>Lighthouse, an open-source, automated tool for improving the quality of your Progressive Web Apps,
 eliminates much of the manual testing that was previously required.
@@ -355,15 +379,15 @@ You can even use Lighthouse in continuous integration systems to catch regressio
 </blockquote>
 <p>Enter Chrome&rsquo;s <code>Developer's Tools -&gt; Audits</code>, and check <code>Progressive Web Apps</code>.
 After tests, it will show you website&rsquo;s report.</p>
-<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Lighthouse.webp" alt="Lighthouse" title="Lighthouse">
+<p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/Lighthouse.webp" alt="Lighthouse" title="Lighthouse">
 <em>Lighthouse PWA Audits</em></p>
 <p>If configure right, browser which support PWA will show <code>Install</code> button or notice you add to desktop.</p>
-<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/InstallNotice.webp" alt="Install Notice" title="InstallNotice">
+<p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/InstallNotice.webp" alt="Install Notice" title="InstallNotice">
 <em>Install Notice</em></p>
 <p>If not, Enter Chrome&rsquo;s <code>Developer's Tools -&gt; Manifest</code> and <code>Installability</code> may show reason.</p>
-<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Installability.webp" alt="Installability" title="Installability">
+<p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/Installability.webp" alt="Installability" title="Installability">
 <em>Manifest Installability</em></p>
-<h2 id="expand">Expand</h2>
+<h2 id="expand">Expand<a href="#expand" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <ul>
 <li><a href="https://blog.jeremylikness.com/blog/implement-progressive-web-app-hugo/">Implement a Progressive Web App (PWA) in your Static Website</a></li>
 <li><a href="https://github.com/wildhaber/offline-first-sw">offline-first-sw</a></li>
@@ -378,29 +402,31 @@ After tests, it will show you website&rsquo;s report.</p>
 </ol>
 </section>
 
-  </div>
-  
-  <div class="pagination">
+        </div></div>
+
+    
+      
+<div class="pagination">
     <div class="pagination__title">
-      <span
-        class="pagination__title-h">Read other posts</span>
-      <hr />
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
     </div>
     <div class="pagination__buttons">
-      
-      
-      <span class="button next">
-        <a href="https://conight.com/posts/fix-python-compile-uuid-error/">
-          <span class="button__text">Compile install python raise uuid error on Centos</span>
-          <span class="button__icon">→</span>
-        </a>
-      </span>
-      
+        
+        
+        <span class="button next">
+            <a href="https://conight.com/posts/fix-python-compile-uuid-error/">
+                <span class="button__text">Compile install python raise uuid error on Centos</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
     </div>
-  </div>
-  
+</div>
 
-  
+    
+
+    
   <div id="disqus_thread"></div>
 <script type="application/javascript">
     var disqus_config = function () {
@@ -423,12 +449,12 @@ After tests, it will show you website&rsquo;s report.</p>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-</div>
-
   </div>
 
-  
-    <footer class="footer">
+    </div>
+
+    
+        <footer class="footer">
   <div class="footer__inner">
     
       <div class="copyright copyright--user">
@@ -446,7 +472,7 @@ After tests, it will show you website&rsquo;s report.</p>
 
 
 
-  
+    
 </div>
 
 </body>

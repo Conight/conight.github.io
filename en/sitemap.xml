@@ -138,6 +138,11 @@
   </url>
   
   <url>
+    <loc>https://conight.com/offline/</loc>
+    <lastmod>2020-01-01T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://conight.com/tags/centos/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <xhtml:link

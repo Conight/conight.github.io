@@ -1,7 +1,7 @@
 {
-  "name": "My Programming Blog",
-  "short_name": "Blog",
-  "description": "Blog",
+  "name": "Conight Blog",
+  "short_name": "Conight Blog",
+  "description": "Conight Blog",
   "start_url": "/",
   "icons": [
     {

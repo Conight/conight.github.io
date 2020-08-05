@@ -1,42 +1,89 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  
-    <title>Hugo 与 PWA :: Conight&#39;s Blog — Share the world.</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+        <title>Hugo 与 PWA :: Conight&#39;s Blog — Share the world.</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Progressive Web App (PWA)1 作为 Google 在 2016 年提出的概念，目的是让网页体验更加接近于原生应用。
 本文记录把 PWA 结合 Hugo2 的过程，使个人博客更加现代化。
 Service Workers 注册 首先对 Hugo 添加 Service Workers 支持的 Js 文件：sw.js。 文件可从 offline-first-sw 下载。
 文件下载之后，放置到 Hugo 可读取的目录下。比如 /static 目录。
 创建一个 footer 的 Partial Templates 并添加注册 Service Workers 的代码。
-if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator.serviceWorker.controller) { let links = document.querySelectorAll( PREFETCH_LINK_RELS.map((rel) =&amp;gt; { return &amp;#39;link[rel=&amp;#39;&#43;rel&#43;&amp;#39;]&amp;#39;; })."/>
-<meta name="keywords" content="Hugo, PWA"/>
-<meta name="robots" content="noodp"/>
-<meta name="theme-color" content="#222128">
+if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator.serviceWorker.controller) { let links = document.querySelectorAll( PREFETCH_LINK_RELS.map((rel) =&amp;gt; { return &amp;#39;link[rel=&amp;#39;&#43;rel&#43;&amp;#39;]&amp;#39;; })." />
+<meta name="keywords" content="Hugo, PWA" />
+<meta name="robots" content="noodp" />
 <link rel="canonical" href="https://conight.com/zh/posts/hugo-with-progressive-web-app/" />
+
 
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-132063311-1', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-<script data-ad-client="ca-pub-9402374999951815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-<link rel="stylesheet" href="https://conight.com/assets/pattern.min.css">
 
 <link rel="stylesheet" href="https://conight.com/assets/style.css">
 
 
 
 
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://conight.com/img/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="https://conight.com/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="@ConightW" />
+
+<meta name="twitter:creator" content="@ConightW" />
+
+
+<meta property="og:locale" content="zh" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Hugo 与 PWA :: Conight&#39;s Blog">
+<meta property="og:description" content="Progressive Web App (PWA) 与 Hugo 结合。" />
+<meta property="og:url" content="https://conight.com/zh/posts/hugo-with-progressive-web-app/" />
+<meta property="og:site_name" content="Hugo 与 PWA" />
+
+  <meta property="og:image" content="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2020-01-16 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:image" content="https://conight.com/apple-touch-icon.png" />
+
+
+<meta name="theme-color" content="#222128">
+
+
+<link rel="stylesheet" href="/assets/pattern.min.css">
 
 
 <link rel="manifest" href="/manifest.json">
@@ -51,50 +98,22 @@ if (!doNotTrack) {
 <meta name="msapplication-TileColor" content="#603cba">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Hugo 与 PWA :: Conight&#39;s Blog — Share the world." />
-<meta name="twitter:description" content="Progressive Web App (PWA)1 作为 Google 在 2016 年提出的概念，目的是让网页体验更加接近于原生应用。
-本文记录把 PWA 结合 Hugo2 的过程，使个人博客更加现代化。
-Service Workers 注册 首先对 Hugo 添加 Service Workers 支持的 Js 文件：sw.js。 文件可从 offline-first-sw 下载。
-文件下载之后，放置到 Hugo 可读取的目录下。比如 /static 目录。
-创建一个 footer 的 Partial Templates 并添加注册 Service Workers 的代码。
-if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator.serviceWorker.controller) { let links = document.querySelectorAll( PREFETCH_LINK_RELS.map((rel) =&amp;gt; { return &amp;#39;link[rel=&amp;#39;&#43;rel&#43;&amp;#39;]&amp;#39;; })." />
-<meta name="twitter:site" content="https://conight.com/" />
-<meta name="twitter:creator" content="Conight" />
-<meta name="twitter:image" content="https://conight.com/posts_assests/attachment/hugo-with-progressive-web-app/DeviceUsage.webp">
+<script data-ad-client="ca-pub-9402374999951815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="/assets/hammer.min.js"></script>
+<script src="/assets/leonsans/leon.js"></script>
+<script src="/assets/leonsans/util.js"></script>
+<script src="/assets/leonsans/logo.js"></script>
+<script src="/assets/reg_sw.js"></script>
 
 
-<meta property="og:locale" content="zh" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Hugo 与 PWA :: Conight&#39;s Blog — Share the world.">
-<meta property="og:description" content="Progressive Web App (PWA)1 作为 Google 在 2016 年提出的概念，目的是让网页体验更加接近于原生应用。
-本文记录把 PWA 结合 Hugo2 的过程，使个人博客更加现代化。
-Service Workers 注册 首先对 Hugo 添加 Service Workers 支持的 Js 文件：sw.js。 文件可从 offline-first-sw 下载。
-文件下载之后，放置到 Hugo 可读取的目录下。比如 /static 目录。
-创建一个 footer 的 Partial Templates 并添加注册 Service Workers 的代码。
-if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator.serviceWorker.controller) { let links = document.querySelectorAll( PREFETCH_LINK_RELS.map((rel) =&amp;gt; { return &amp;#39;link[rel=&amp;#39;&#43;rel&#43;&amp;#39;]&amp;#39;; })." />
-<meta property="og:url" content="https://conight.com/zh/posts/hugo-with-progressive-web-app/" />
-<meta property="og:site_name" content="Hugo 与 PWA" />
-<meta property="og:image" content="https://conight.com/posts_assests/attachment/hugo-with-progressive-web-app/DeviceUsage.webp">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
-
-<meta property="article:published_time" content="2020-01-16 00:00:00 &#43;0000 UTC" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Progressive Web App (PWA) cook with Hugo.">
+        <meta name="twitter:image" content="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp">
+        
+    <meta name="twitter:creator" content="@ConightW">
 
 
 
-
-
-
-
-
-
-<script src="https://conight.com/assets/hammer.min.js"></script>
-<script src="https://conight.com/assets/leonsans/leon.js"></script>
-<script src="https://conight.com/assets/leonsans/util.js"></script>
-<script src="https://conight.com/assets/leonsans/logo.js"></script>
-<script src="https://conight.com/assets/reg_sw.js"></script>
 
 
 </head>
@@ -103,11 +122,11 @@ if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const 
 
 <div class="container headings--one-size">
 
-  <header class="header">
+    <header class="header">
   <div class="header__inner">
     <div class="header__logo">
       <a href="/zh">
-    <div class="logo">
+    <div class="logo" style="background: none">
         <div style="display: none" id="logo-text">
             Conight
         </div>
@@ -180,45 +199,47 @@ if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const 
 </header>
 
 
-  <div class="content">
-    
-<div class="post">
-  <h1 class="post-title">
-    <a href="https://conight.com/zh/posts/hugo-with-progressive-web-app/">Hugo 与 PWA</a></h1>
-  <div class="post-meta">
+    <div class="content">
+        
+  <div class="post">
+    <h1 class="post-title">
+      <a href="https://conight.com/zh/posts/hugo-with-progressive-web-app/">Hugo 与 PWA</a></h1>
+    <div class="post-meta">
       
-    <span class="post-date">
-      2020-01-16
-    </span>
-    
-    
-    <span class="post-author">::
+        <span class="post-date">
+        2020-01-16 [Updated: 2020-01-16]
+      </span>
+      
+      
+        <span class="post-author">::
       Conight
     </span>
-    
-  </div>
+      
+    </div>
 
-  
-  <span class="post-tags">
     
-    #<a href="https://conight.com/zh/tags/hugo/">Hugo</a>&nbsp;
+      <span class="post-tags">
     
-    #<a href="https://conight.com/zh/tags/pwa/">PWA</a>&nbsp;
+      #<a href="https://conight.com/zh/tags/hugo/">Hugo</a>&nbsp;
     
-    #<a href="https://conight.com/zh/tags/web/">WEB</a>&nbsp;
+      #<a href="https://conight.com/zh/tags/pwa/">PWA</a>&nbsp;
+    
+      #<a href="https://conight.com/zh/tags/web/">WEB</a>&nbsp;
     
   </span>
-  
+    
 
-  
-  <img src="https://conight.com/posts_assests/attachment/hugo-with-progressive-web-app/DeviceUsage.webp" class="post-cover" />
-  
+    
+      <img src="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp" class="post-cover" alt="Hugo 与 PWA" />
+    
 
-  <div class="post-content">
-    <p><code>Progressive Web App (PWA)</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 作为 <code>Google</code> 在 <code>2016</code> 年提出的概念，目的是让网页体验更加接近于原生应用。</p>
+    
+
+    <div class="post-content"><div>
+          <p><code>Progressive Web App (PWA)</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 作为 <code>Google</code> 在 <code>2016</code> 年提出的概念，目的是让网页体验更加接近于原生应用。</p>
 <p>本文记录把 PWA 结合 Hugo<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 的过程，使个人博客更加现代化。</p>
-<h1 id="service-workers">Service Workers</h1>
-<h2 id="注册">注册</h2>
+<h1 id="service-workers">Service Workers<a href="#service-workers" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="注册">注册<a href="#注册" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>首先对 <code>Hugo</code> 添加 <code>Service Workers</code> 支持的 <code>Js</code> 文件：<code>sw.js</code>。
 文件可从 <a href="https://github.com/wildhaber/offline-first-sw">offline-first-sw</a> 下载。</p>
 <p>文件下载之后，放置到 <code>Hugo</code> 可读取的目录下。比如 <code>/static</code> 目录。</p>
@@ -260,12 +281,12 @@ if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const 
             }
         });
 }
-</code></pre></div><h2 id="配置">配置</h2>
-<h3 id="cache_version--number-">CACHE_VERSION <code>{ number }</code></h3>
+</code></pre></div><h2 id="配置">配置<a href="#配置" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h3 id="cache_version--number-">CACHE_VERSION <code>{ number }</code><a href="#cache_version--number-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>声明当前 <code>Web APP</code> 的版本，需要根据缓存的文件目录来决定是否更新版本号。
 只有版本号变更，浏览器才会缓存新的资源文件并替换旧版本下的缓存。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CACHE_VERSION</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-</code></pre></div><h3 id="base_cache_files--array-">BASE_CACHE_FILES <code>{ array }</code></h3>
+</code></pre></div><h3 id="base_cache_files--array-">BASE_CACHE_FILES <code>{ array }</code><a href="#base_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>定义始终需要缓存的文件、页面路径。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">BASE_CACHE_FILES</span> <span style="color:#f92672">=</span> [
     <span style="color:#75715e">// page cache
@@ -282,17 +303,17 @@ if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const 
     <span style="color:#75715e">// ico cache
 </span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;/favicon.ico&#39;</span>,
 ];
-</code></pre></div><h3 id="offline_cache_files--array-">OFFLINE_CACHE_FILES <code>{ array }</code></h3>
+</code></pre></div><h3 id="offline_cache_files--array-">OFFLINE_CACHE_FILES <code>{ array }</code><a href="#offline_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>定义离线页面所需的文件。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">OFFLINE_CACHE_FILES</span> <span style="color:#f92672">=</span> [
     <span style="color:#e6db74">&#39;/offline.html&#39;</span>,
 ];
-</code></pre></div><h3 id="not_found_cache_files--array-">NOT_FOUND_CACHE_FILES <code>{ array }</code></h3>
+</code></pre></div><h3 id="not_found_cache_files--array-">NOT_FOUND_CACHE_FILES <code>{ array }</code><a href="#not_found_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>定义 404 页面所需的文件。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">NOT_FOUND_CACHE_FILES</span> <span style="color:#f92672">=</span> [
     <span style="color:#e6db74">&#39;/404.html&#39;</span>,
 ];
-</code></pre></div><h3 id="cache_blacklist--array">CACHE_BLACKLIST <code>{ array}</code></h3>
+</code></pre></div><h3 id="cache_blacklist--array">CACHE_BLACKLIST <code>{ array}</code><a href="#cache_blacklist--array" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>资源缓存黑名单，在这个名单中的地址、域名不会缓存资源。建议不要包含本地测试地址。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CACHE_BLACKLIST</span> <span style="color:#f92672">=</span> [
     (<span style="color:#a6e22e">str</span>) =&gt; {
@@ -301,9 +322,9 @@ if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const 
 </span><span style="color:#75715e"></span>    },
 ];
 </code></pre></div><p><code>Chrome</code> 卡法这模式下 <code>Cache Storage</code> 中根据配置缓存的各种资源：</p>
-<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Cache.webp" alt="Cache Storage" title="Cache Storage">
+<p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/Cache.webp" alt="Cache Storage" title="Cache Storage">
 <em>Cache Storage</em></p>
-<h1 id="manifestjson">manifest.json</h1>
+<h1 id="manifestjson">manifest.json<a href="#manifestjson" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p><code>manifest</code> 可以理解为 <code>PWA</code> 对于浏览器的声明文件。告诉浏览器该怎么安装你的 <code>PWA</code>。
 具体字段定义可参考 <a href="https://developers.google.com/web/fundamentals/web-app-manifest/">官方文档</a> 。</p>
 <p>下面是我博客的 <code>manifest</code>：</p>
@@ -339,7 +360,7 @@ if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const 
 </code></pre></div><ul>
 <li><a href="https://realfavicongenerator.net/">realfavicongenerator.net</a> 网站生成的全套图标及资源文件中包含 <code>manifest</code> ，注意更改。</li>
 </ul>
-<h1 id="lighthouse">Lighthouse</h1>
+<h1 id="lighthouse">Lighthouse<a href="#lighthouse" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p>使用 <code>Chrome</code> 自带的检测工具测试下网站对 <code>PWA</code> 的支持。</p>
 <blockquote>
 <p>Lighthouse, an open-source, automated tool for improving the quality of your Progressive Web Apps,
@@ -348,19 +369,19 @@ You can even use Lighthouse in continuous integration systems to catch regressio
 </blockquote>
 <p>进入 <code>Chrome</code> 开发者模式，选择 <code>Audits</code> 功能，注意勾选 <code>Audits -&gt; Progressive Web Apps</code>。
 检测完成后会有支持情况的一个清单。</p>
-<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Lighthouse.webp" alt="Lighthouse" title="Lighthouse">
+<p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/Lighthouse.webp" alt="Lighthouse" title="Lighthouse">
 <em>Lighthouse PWA Audits</em></p>
 <p>所有的配置完成后，所有支持 <code>PWA</code> 的浏览器就会显示可安装的按钮或提示。</p>
-<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/InstallNotice.webp" alt="Install Notice" title="InstallNotice">
+<p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/InstallNotice.webp" alt="Install Notice" title="InstallNotice">
 <em>Install Notice</em></p>
 <p>如果没有提示或显示可安装，可进入 <code>Chrome</code> 开发者模式下 <code>Application -&gt; Manifest</code>，
 其中 <code>Installability</code> 下则会提示可能的无法安装的原因：</p>
-<p><img src="/posts_assests/attachment/hugo-with-progressive-web-app/Installability.webp" alt="Installability" title="Installability">
+<p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/Installability.webp" alt="Installability" title="Installability">
 <em>Manifest Installability</em></p>
 <ul>
 <li>示例图中无法安装是因为处于隐私模式。</li>
 </ul>
-<h2 id="拓展阅读">拓展阅读</h2>
+<h2 id="拓展阅读">拓展阅读<a href="#拓展阅读" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <ul>
 <li><a href="https://blog.jeremylikness.com/blog/implement-progressive-web-app-hugo/">Implement a Progressive Web App (PWA) in your Static Website</a></li>
 <li><a href="https://github.com/wildhaber/offline-first-sw">offline-first-sw</a></li>
@@ -378,29 +399,31 @@ You can even use Lighthouse in continuous integration systems to catch regressio
 </ol>
 </section>
 
-  </div>
-  
-  <div class="pagination">
+        </div></div>
+
+    
+      
+<div class="pagination">
     <div class="pagination__title">
-      <span
-        class="pagination__title-h">Read other posts</span>
-      <hr />
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
     </div>
     <div class="pagination__buttons">
-      
-      
-      <span class="button next">
-        <a href="https://conight.com/zh/posts/fix-python-compile-uuid-error/">
-          <span class="button__text">Python 源码编译时 uuid 模块报错</span>
-          <span class="button__icon">→</span>
-        </a>
-      </span>
-      
+        
+        
+        <span class="button next">
+            <a href="https://conight.com/zh/posts/fix-python-compile-uuid-error/">
+                <span class="button__text">Python 源码编译时 uuid 模块报错</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
     </div>
-  </div>
-  
+</div>
 
-  
+    
+
+    
   <div id="disqus_thread"></div>
 <script type="application/javascript">
     var disqus_config = function () {
@@ -423,12 +446,12 @@ You can even use Lighthouse in continuous integration systems to catch regressio
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-</div>
-
   </div>
 
-  
-    <footer class="footer">
+    </div>
+
+    
+        <footer class="footer">
   <div class="footer__inner">
     
       <div class="copyright copyright--user">
@@ -446,7 +469,7 @@ You can even use Lighthouse in continuous integration systems to catch regressio
 
 
 
-  
+    
 </div>
 
 </body>
