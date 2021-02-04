@@ -6,10 +6,6 @@
     <description>Recent content in Categories on Conight&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2020 Conight All Rights Reserved.</copyright>
-    
-	<atom:link href="https://conight.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>© 2020 Conight All Rights Reserved.</copyright><atom:link href="https://conight.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Conight All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://conight.com/zh/tags/pwa/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://conight.com/zh/tags/pwa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo 与 PWA</title>
       <link>https://conight.com/zh/posts/hugo-with-progressive-web-app/</link>

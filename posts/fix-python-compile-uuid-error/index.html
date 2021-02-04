@@ -35,7 +35,7 @@ if (!doNotTrack) {
 
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://conight.com/img/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon" href="https://conight.com/img/apple-touch-icon-192x192.png">
 
   <link rel="shortcut icon" href="https://conight.com/favicon.ico">
 
@@ -52,10 +52,10 @@ if (!doNotTrack) {
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Compile install python raise uuid error on Centos :: Conight&#39;s Blog">
+<meta property="og:title" content="Compile install python raise uuid error on Centos">
 <meta property="og:description" content="Compile install python on Centos7 failed, even with uuid-devel installed." />
 <meta property="og:url" content="https://conight.com/posts/fix-python-compile-uuid-error/" />
-<meta property="og:site_name" content="Compile install python raise uuid error on Centos" />
+<meta property="og:site_name" content="Conight&#39;s Blog" />
 
   <meta property="og:image" content="https://conight.com/">
 
@@ -118,7 +118,9 @@ if (!doNotTrack) {
 </a>
 
     </div>
-    <div class="menu-trigger">menu</div>
+    
+      <div class="menu-trigger">menu</div>
+    
   </div>
   
     <nav class="menu">
@@ -165,15 +167,15 @@ if (!doNotTrack) {
     
     
     <hr />
-        
-          <li>
-            <a href="https://conight.com/">English</a>
-          </li>
-        
-          <li>
-            <a href="https://conight.com/zh/">Chinese</a>
-          </li>
-        
+      
+        <li>
+          <a href="https://conight.com/">English</a>
+        </li>
+      
+        <li>
+          <a href="https://conight.com/zh/">Chinese</a>
+        </li>
+      
     
   </ul>
 </nav>
@@ -274,7 +276,7 @@ Just remove one to fix this.</p>
 </code></pre></div><p>Delete line 6 and change line 7 as blow</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#elif defined(HAVE_UUID_H)
 </span></code></pre></div><p>or patch this file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-patch" data-lang="patch"><span style="color:#f92672">--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Modules/_uuidmodule.c       2019-01-11 15:39:04.470000000 -0500
 </span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -3,8 +3,7 @@
 </span><span style="color:#75715e"></span> #include &#34;Python.h&#34;
@@ -354,7 +356,11 @@ to Python source code root path and execute</p>
 </footer>
 
 <script src="https://conight.com/assets/main.js"></script>
-<script src="https://conight.com/assets/prism.js"></script>
+
+
+
+  <script src="https://conight.com/assets/languageSelector.js"></script>
+
 
 
 

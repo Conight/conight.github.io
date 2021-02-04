@@ -35,7 +35,7 @@ if (!doNotTrack) {
 
 
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://conight.com/img/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon" href="https://conight.com/img/apple-touch-icon-192x192.png">
 
   <link rel="shortcut icon" href="https://conight.com/favicon.ico">
 
@@ -52,10 +52,10 @@ if (!doNotTrack) {
 
 <meta property="og:locale" content="zh" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Python 源码编译时 uuid 模块报错 :: Conight&#39;s Blog">
+<meta property="og:title" content="Python 源码编译时 uuid 模块报错">
 <meta property="og:description" content="Centos7 编译安装 Python 过程中，即使安装 uuid-devel 也无法成功编译。" />
 <meta property="og:url" content="https://conight.com/zh/posts/fix-python-compile-uuid-error/" />
-<meta property="og:site_name" content="Python 源码编译时 uuid 模块报错" />
+<meta property="og:site_name" content="Conight&#39;s Blog" />
 
   <meta property="og:image" content="https://conight.com/">
 
@@ -118,7 +118,9 @@ if (!doNotTrack) {
 </a>
 
     </div>
-    <div class="menu-trigger">menu</div>
+    
+      <div class="menu-trigger">menu</div>
+    
   </div>
   
     <nav class="menu">
@@ -165,15 +167,15 @@ if (!doNotTrack) {
     
     
     <hr />
-        
-          <li>
-            <a href="https://conight.com/">English</a>
-          </li>
-        
-          <li>
-            <a href="https://conight.com/zh/">Chinese</a>
-          </li>
-        
+      
+        <li>
+          <a href="https://conight.com/">English</a>
+        </li>
+      
+        <li>
+          <a href="https://conight.com/zh/">Chinese</a>
+        </li>
+      
     
   </ul>
 </nav>
@@ -271,7 +273,7 @@ _uuid
 </code></pre></div><p>删除第6行，将第7行改为</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#elif defined(HAVE_UUID_H)
 </span></code></pre></div><p>或打入以下补丁</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-patch" data-lang="patch"><span style="color:#f92672">--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Modules/_uuidmodule.c       2019-01-11 15:39:04.470000000 -0500
 </span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -3,8 +3,7 @@
 </span><span style="color:#75715e"></span> #include &#34;Python.h&#34;
@@ -350,7 +352,11 @@ _uuid
 </footer>
 
 <script src="https://conight.com/assets/main.js"></script>
-<script src="https://conight.com/assets/prism.js"></script>
+
+
+
+  <script src="https://conight.com/assets/languageSelector.js"></script>
+
 
 
 
