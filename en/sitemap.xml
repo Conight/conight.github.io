@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://conight.com/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
@@ -15,9 +14,7 @@
                 hreflang="en"
                 href="https://conight.com/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/tags/hugo/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -30,9 +27,7 @@
                 hreflang="en"
                 href="https://conight.com/tags/hugo/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/posts/hugo-with-progressive-web-app/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -45,9 +40,7 @@
                 hreflang="en"
                 href="https://conight.com/posts/hugo-with-progressive-web-app/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/posts/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -60,9 +53,7 @@
                 hreflang="en"
                 href="https://conight.com/posts/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/tags/pwa/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -75,9 +66,7 @@
                 hreflang="en"
                 href="https://conight.com/tags/pwa/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/tags/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -90,9 +79,7 @@
                 hreflang="en"
                 href="https://conight.com/tags/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/tags/web/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -105,9 +92,7 @@
                 hreflang="en"
                 href="https://conight.com/tags/web/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/about/</loc>
     <lastmod>2020-01-15T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -120,9 +105,7 @@
                 hreflang="en"
                 href="https://conight.com/about/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/showcase/</loc>
     <lastmod>2020-01-15T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -135,14 +118,10 @@
                 hreflang="en"
                 href="https://conight.com/showcase/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/offline/</loc>
     <lastmod>2020-01-01T00:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/tags/centos/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -155,9 +134,7 @@
                 hreflang="en"
                 href="https://conight.com/tags/centos/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/posts/fix-python-compile-uuid-error/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -170,9 +147,7 @@
                 hreflang="en"
                 href="https://conight.com/posts/fix-python-compile-uuid-error/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/tags/linux/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -185,9 +160,7 @@
                 hreflang="en"
                 href="https://conight.com/tags/linux/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/tags/python/</loc>
     <lastmod>2019-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -200,9 +173,7 @@
                 hreflang="en"
                 href="https://conight.com/tags/python/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://conight.com/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -215,5 +186,4 @@
                 href="https://conight.com/categories/"
                 />
   </url>
-  
 </urlset>
