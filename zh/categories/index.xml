@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Conight&#39;s Blog</title>
-    <link>https://conight.com/categories/</link>
+    <link>https://conight.com/zh/categories/</link>
     <description>Recent content in Categories on Conight&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2020 Conight All Rights Reserved.</copyright><atom:link href="https://conight.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2020 Conight All Rights Reserved.</copyright><atom:link href="https://conight.com/zh/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

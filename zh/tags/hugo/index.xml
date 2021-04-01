@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Conight&#39;s Blog</title>
-    <link>https://conight.com/tags/hugo/</link>
+    <link>https://conight.com/zh/tags/hugo/</link>
     <description>Recent content in Hugo on Conight&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Conight All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://conight.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://conight.com/zh/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hugo with PWA</title>
-      <link>https://conight.com/posts/hugo-with-progressive-web-app/</link>
+      <title>Hugo 与 PWA</title>
+      <link>https://conight.com/zh/posts/hugo-with-progressive-web-app/</link>
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://conight.com/posts/hugo-with-progressive-web-app/</guid>
-      <description>To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
-We will cook it with Hugo1 to make Hugo more modernization.
-Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
-After download, put it to Hugo&amp;rsquo;s readable directory. Eg. /static
-Add or modify footer based Partial Templates, then add code to register Service Workers.
-if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator.</description>
+      <guid>https://conight.com/zh/posts/hugo-with-progressive-web-app/</guid>
+      <description>Progressive Web App (PWA)1 作为 Google 在 2016 年提出的概念，目的是让网页体验更加接近于原生应用。
+本文记录把 PWA 结合 Hugo2 的过程，使个人博客更加现代化。
+Service Workers 注册 首先对 Hugo 添加 Service Workers 支持的 Js 文件：sw.js。 文件可从 offline-first-sw 下载。
+文件下载之后，放置到 Hugo 可读取的目录下。比如 /static 目录。
+创建一个 footer 的 Partial Templates 并添加注册 Service Workers 的代码。
+if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator.serviceWorker.controller) { let links = document.querySelectorAll( PREFETCH_LINK_RELS.map((rel) =&amp;gt; { return &amp;#39;link[rel=&amp;#39;+rel+&amp;#39;]&amp;#39;; }).</description>
     </item>
     
   </channel>

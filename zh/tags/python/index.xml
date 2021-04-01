@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Conight&#39;s Blog</title>
-    <link>https://conight.com/tags/python/</link>
+    <link>https://conight.com/zh/tags/python/</link>
     <description>Recent content in Python on Conight&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Conight All Rights Reserved.</copyright>
-    <lastBuildDate>Fri, 11 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://conight.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://conight.com/zh/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Compile install python raise uuid error on Centos</title>
-      <link>https://conight.com/posts/fix-python-compile-uuid-error/</link>
+      <title>Python 源码编译时 uuid 模块报错</title>
+      <link>https://conight.com/zh/posts/fix-python-compile-uuid-error/</link>
       <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://conight.com/posts/fix-python-compile-uuid-error/</guid>
-      <description>System environment CentOS Linux release 7.6.1810 (Core) gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) Python-3.7.2 uuid-devel.x86_64 1.6.2-26.el7 Scene Description Compile install Python 3.7.2 on Centos7 with error blow
+      <guid>https://conight.com/zh/posts/fix-python-compile-uuid-error/</guid>
+      <description>系统环境 CentOS Linux release 7.6.1810 (Core) gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) Python-3.7.2 uuid-devel.x86_64 1.6.2-26.el7 场景 描述 在 Centos7 通过源码编译安装 Python 3.7.2 ，出现以下错误
 building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std=c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror=implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0: /usr/include/uuid.h:94:24: error: conflicting types for ‘uuid_t’ typedef struct uuid_st uuid_t; ^ In file included from /home/tt/Python-3.</description>
     </item>
     
