@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  
+    <title>Python 源码编译时 uuid 模块报错 :: Conight&#39;s Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="系统环境 CentOS Linux release 7.6.1810 (Core) gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) Python-3.7.2 uuid-devel.x86_64 1.6.2-26.el7 场景 描述 在 Centos7 通过源码编译安装 Python 3.7.2 ，出现以下错误
+building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std=c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror=implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0: /usr/include/uuid.h:94:24: error: conflicting types for ‘uuid_t’ typedef struct uuid_st uuid_t; ^ In file included from /home/tt/Python-3." />
+<meta name="keywords" content="Python, uuid" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://conight.com/zh/posts/fix-python-compile-uuid-error/" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-132063311-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+<link rel="stylesheet" href="https://conight.com/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://conight.com/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://conight.com/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="@ConightW" />
+  
+    <meta name="twitter:creator" content="Conight" />
+
+
+
+<meta property="og:locale" content="zh" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Python 源码编译时 uuid 模块报错">
+<meta property="og:description" content="Centos7 编译安装 Python 过程中，即使安装 uuid-devel 也无法成功编译。" />
+<meta property="og:url" content="https://conight.com/zh/posts/fix-python-compile-uuid-error/" />
+<meta property="og:site_name" content="Conight&#39;s Blog" />
+
+  <meta property="og:image" content="https://conight.com/">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2019-01-11 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:image" content="https://conight.com/apple-touch-icon.png" />
+
+
+<meta name="theme-color" content="#222128">
+
+
+<link rel="stylesheet" href="https://conight.com/assets/pattern.min.css">
+
+
+<link rel="manifest" href="https://conight.com/manifest.json">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://conight.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://conight.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://conight.com/favicon-16x16.png">
+<link rel="mask-icon" href="https://conight.com/safari-pinned-tab.svg" color="#00475c">
+<meta name="apple-mobile-web-app-title" content="Conight's Blog">
+<meta name="application-name" content="Conight's Blog">
+<meta name="msapplication-TileColor" content="#603cba">
+<meta name="msapplication-TileImage" content="https://conight.com/mstile-144x144.png">
+
+<script src="https://conight.com/assets/reg_sw.js"></script>
+
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(73782454, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/73782454" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/zh">
+  <div class="logo" style="background: none">
+    <div style="display: none" id="logo-text">
+      Conight
+    </div>
+    <canvas id="logo-canvas" width="150" height="35"></canvas>
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/zh/about">About</a></li>
+        
+      
+        
+          <li><a href="/zh/showcase">Showcase</a></li>
+        
+      
+      
+    
+
+    
+    <div class="spacer"></div>
+    <ul class="language-selector">
+      <ul class="language-selector-current">
+          <li>Chinese ▾</li>
+      </ul>
+      <ul class="language-selector__more hidden">
+        
+        <li><a href="https://conight.com/">English</a></li>
+        
+        <li><a href="https://conight.com/zh/">Chinese</a></li>
+        
+      </ul>
+    </ul>
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/zh/about">About</a></li>
+      
+    
+      
+        <li><a href="/zh/showcase">Showcase</a></li>
+      
+    
+    
+    <hr />
+      
+        <li>
+          <a href="https://conight.com/">English</a>
+        </li>
+      
+        <li>
+          <a href="https://conight.com/zh/">Chinese</a>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://conight.com/zh/posts/fix-python-compile-uuid-error/">Python 源码编译时 uuid 模块报错</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2019-01-11 [Updated: 2019-01-11]
+      </span>
+    
+    
+    <span class="post-author">:: Conight</span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://conight.com/zh/tags/python/">Python</a>&nbsp;
+    
+    #<a href="https://conight.com/zh/tags/linux/">Linux</a>&nbsp;
+    
+    #<a href="https://conight.com/zh/tags/centos/">Centos</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="系统环境">系统环境<a href="#系统环境" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<pre><code>CentOS Linux release 7.6.1810 (Core)
+gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC)
+Python-3.7.2
+uuid-devel.x86_64 1.6.2-26.el7
+</code></pre><h1 id="场景">场景<a href="#场景" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="描述">描述<a href="#描述" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>在 <code>Centos7</code> 通过源码编译安装 <code>Python 3.7.2</code> ，出现以下错误</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">building <span style="color:#e6db74">&#39;_uuid&#39;</span> extension
+gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std<span style="color:#f92672">=</span>c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror<span style="color:#f92672">=</span>implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o
+In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0:
+/usr/include/uuid.h:94:24: error: conflicting types <span style="color:#66d9ef">for</span> ‘uuid_t’
+ typedef struct uuid_st uuid_t;
+                        ^
+In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:5:0:
+/usr/include/uuid/uuid.h:44:23: note: previous declaration of ‘uuid_t’ was here
+ typedef unsigned char uuid_t<span style="color:#f92672">[</span>16<span style="color:#f92672">]</span>;
+                       ^
+In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0:
+/usr/include/uuid.h:107:22: error: conflicting types <span style="color:#66d9ef">for</span> ‘uuid_compare’
+ extern uuid_rc_t     uuid_compare  <span style="color:#f92672">(</span>const uuid_t  *_uuid, const uuid_t *_uuid2, int *_result<span style="color:#f92672">)</span>;
+                      ^
+In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:5:0:
+/usr/include/uuid/uuid.h:73:5: note: previous declaration of ‘uuid_compare’ was here
+ int uuid_compare<span style="color:#f92672">(</span>const uuid_t uu1, const uuid_t uu2<span style="color:#f92672">)</span>;
+     ^
+/home/tt/Python-3.7.2/Modules/_uuidmodule.c: In <span style="color:#66d9ef">function</span> ‘py_uuid_generate_time_safe’:
+/home/tt/Python-3.7.2/Modules/_uuidmodule.c:15:12: error: storage size of ‘uuid’ isn’t known
+     uuid_t uuid;
+            ^
+/home/tt/Python-3.7.2/Modules/_uuidmodule.c:15:12: warning: unused variable ‘uuid’ <span style="color:#f92672">[</span>-Wunused-variable<span style="color:#f92672">]</span>
+/home/tt/Python-3.7.2/Modules/_uuidmodule.c:35:1: warning: control reaches end of non-void <span style="color:#66d9ef">function</span> <span style="color:#f92672">[</span>-Wreturn-type<span style="color:#f92672">]</span>
+ <span style="color:#f92672">}</span>
+ ^
+
+The following modules found by detect_modules<span style="color:#f92672">()</span> in setup.py, have been
+built by the Makefile instead, as configured by the Setup files:
+_abc                  atexit                pwd                
+time                                                           
+
+
+Failed to build these modules:
+_uuid
+</code></pre></div><h1 id="分析">分析<a href="#分析" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>查看报错信息发现问题原因是因为编译过程中，读取到俩个 <code>uuid.h</code> 头文件，俩个头文件中的变量 <code>uuid_t uuid_compare</code> 类型不一致，造成冲突 <code>(conflicting types)</code> ，编译失败。</p>
+<p>进入目录 <code>/usr/include</code> 发现，在本目录下有 <code>uuid.h</code> <code>uuid/uuid.h</code> 俩个头文件文件。要修复问提的话，不要同时包含这俩个文件即可。</p>
+<ul>
+<li><code>/usr/include/uuid.h</code> 由 <code>uuid-devel</code> 包提供</li>
+<li><code>/usr/include/uuid/uuid.h</code> 由 <code>libuuid-devel</code> 包提供</li>
+</ul>
+<h1 id="解决">解决<a href="#解决" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>修改源码文件 <code>Modules/_uuidmodule.c</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vi Modules/_uuidmodule.c
+</code></pre></div><p>删除第6行，将第7行改为</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#elif defined(HAVE_UUID_H)
+</span></code></pre></div><p>或打入以下补丁</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Modules/_uuidmodule.c       2019-01-11 15:39:04.470000000 -0500
+</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -3,8 +3,7 @@
+</span><span style="color:#75715e"></span> #include &#34;Python.h&#34;
+ #ifdef HAVE_UUID_UUID_H
+ #include &lt;uuid/uuid.h&gt;
+<span style="color:#f92672">-#endif
+</span><span style="color:#f92672">-#ifdef HAVE_UUID_H
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+#elif defined(HAVE_UUID_H)
+</span><span style="color:#a6e22e"></span> #include &lt;uuid.h&gt;
+ #endif
+</code></pre></div><p>下载 <a href="/posts_assets/attachment/fix-python-compile-uuid-error/uuidmodule.patch" title="uuidmodule.patch"><code>uuidmodule.patch</code></a> 并放于源码目录下，执行命令</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">patch -p0 &lt; uuidmodule.patch
+</code></pre></div><p>就可以继续愉快的 <code>make</code> 了！大功告成</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="https://conight.com/zh/posts/hugo-with-progressive-web-app/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Hugo 与 PWA</span>
+            </a>
+        </span>
+        
+        
+    </div>
+</div>
+
+  
+
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "conightblog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2020 Conight All Rights Reserved.</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://conight.com/assets/main.js"></script>
+
+
+
+  <script src="https://conight.com/assets/languageSelector.js"></script>
+
+
+
+
+<script src="https://conight.com/assets/hammer.min.js"></script>
+<script src="https://conight.com/assets/leonsans/leon.js"></script>
+<script src="https://conight.com/assets/leonsans/util.js"></script>
+<script src="https://conight.com/assets/leonsans/logo.js"></script>
+
+<script data-ad-client="ca-pub-9402374999951815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+  
+</div>
+
+</body>
+</html>

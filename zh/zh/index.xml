@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conight&#39;s Blog</title>
+    <link>https://conight.com/zh/</link>
+    <description>Recent content on Conight&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2020 Conight All Rights Reserved.</copyright>
+    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://conight.com/zh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo 与 PWA</title>
+      <link>https://conight.com/zh/posts/hugo-with-progressive-web-app/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://conight.com/zh/posts/hugo-with-progressive-web-app/</guid>
+      <description>Progressive Web App (PWA)1 作为 Google 在 2016 年提出的概念，目的是让网页体验更加接近于原生应用。
+本文记录把 PWA 结合 Hugo2 的过程，使个人博客更加现代化。
+Service Workers 注册 首先对 Hugo 添加 Service Workers 支持的 Js 文件：sw.js。 文件可从 offline-first-sw 下载。
+文件下载之后，放置到 Hugo 可读取的目录下。比如 /static 目录。
+创建一个 footer 的 Partial Templates 并添加注册 Service Workers 的代码。
+if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator.serviceWorker.controller) { let links = document.querySelectorAll( PREFETCH_LINK_RELS.map((rel) =&amp;gt; { return &amp;#39;link[rel=&amp;#39;+rel+&amp;#39;]&amp;#39;; }).</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://conight.com/zh/about/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://conight.com/zh/about/</guid>
+      <description>Hi there enjoy!</description>
+    </item>
+    
+    <item>
+      <title>Showcase</title>
+      <link>https://conight.com/zh/showcase/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://conight.com/zh/showcase/</guid>
+      <description>Hi there Showcase</description>
+    </item>
+    
+    <item>
+      <title>Python 源码编译时 uuid 模块报错</title>
+      <link>https://conight.com/zh/posts/fix-python-compile-uuid-error/</link>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://conight.com/zh/posts/fix-python-compile-uuid-error/</guid>
+      <description>系统环境 CentOS Linux release 7.6.1810 (Core) gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) Python-3.7.2 uuid-devel.x86_64 1.6.2-26.el7 场景 描述 在 Centos7 通过源码编译安装 Python 3.7.2 ，出现以下错误
+building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std=c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror=implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0: /usr/include/uuid.h:94:24: error: conflicting types for ‘uuid_t’ typedef struct uuid_st uuid_t; ^ In file included from /home/tt/Python-3.</description>
+    </item>
+    
+  </channel>
+</rss>
