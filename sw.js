@@ -45,6 +45,7 @@ const MAX_TTL = {
   json: 86400,
   js: 86400,
   css: 86400,
+  woff: 86400,
 }
 
 const CACHE_BLACKLIST = [
