@@ -246,7 +246,7 @@ if (!doNotTrack) {
 文件可从 <a href="https://github.com/wildhaber/offline-first-sw">offline-first-sw</a> 下载。</p>
 <p>文件下载之后，放置到 <code>Hugo</code> 可读取的目录下。比如 <code>/static</code> 目录。</p>
 <p>创建一个 <code>footer</code> 的 <code>Partial Templates</code> 并添加注册 <code>Service Workers</code> 的代码。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span>(<span style="color:#e6db74">&#39;serviceWorker&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">navigator</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span>(<span style="color:#e6db74">&#39;serviceWorker&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">navigator</span>) {
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PREFETCH</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PREFETCH_LINK_RELS</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;index&#39;</span>,<span style="color:#e6db74">&#39;next&#39;</span>, <span style="color:#e6db74">&#39;prev&#39;</span>, <span style="color:#e6db74">&#39;prefetch&#39;</span>];
     <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">prefetchCache</span>() {
@@ -287,10 +287,10 @@ if (!doNotTrack) {
 <h3 id="cache_version--number-">CACHE_VERSION <code>{ number }</code><a href="#cache_version--number-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>声明当前 <code>Web APP</code> 的版本，需要根据缓存的文件目录来决定是否更新版本号。
 只有版本号变更，浏览器才会缓存新的资源文件并替换旧版本下的缓存。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CACHE_VERSION</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CACHE_VERSION</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
 </code></pre></div><h3 id="base_cache_files--array-">BASE_CACHE_FILES <code>{ array }</code><a href="#base_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>定义始终需要缓存的文件、页面路径。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">BASE_CACHE_FILES</span> <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">BASE_CACHE_FILES</span> <span style="color:#f92672">=</span> [
     <span style="color:#75715e">// page cache
 </span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;/&#39;</span>,
     <span style="color:#e6db74">&#39;/about/&#39;</span>,
@@ -307,17 +307,17 @@ if (!doNotTrack) {
 ];
 </code></pre></div><h3 id="offline_cache_files--array-">OFFLINE_CACHE_FILES <code>{ array }</code><a href="#offline_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>定义离线页面所需的文件。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">OFFLINE_CACHE_FILES</span> <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">OFFLINE_CACHE_FILES</span> <span style="color:#f92672">=</span> [
     <span style="color:#e6db74">&#39;/offline.html&#39;</span>,
 ];
 </code></pre></div><h3 id="not_found_cache_files--array-">NOT_FOUND_CACHE_FILES <code>{ array }</code><a href="#not_found_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>定义 404 页面所需的文件。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">NOT_FOUND_CACHE_FILES</span> <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">NOT_FOUND_CACHE_FILES</span> <span style="color:#f92672">=</span> [
     <span style="color:#e6db74">&#39;/404.html&#39;</span>,
 ];
 </code></pre></div><h3 id="cache_blacklist--array">CACHE_BLACKLIST <code>{ array}</code><a href="#cache_blacklist--array" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>资源缓存黑名单，在这个名单中的地址、域名不会缓存资源。建议不要包含本地测试地址。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CACHE_BLACKLIST</span> <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CACHE_BLACKLIST</span> <span style="color:#f92672">=</span> [
     (<span style="color:#a6e22e">str</span>) =&gt; {
         <span style="color:#66d9ef">return</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#e6db74">&#39;https://conight.com&#39;</span>);
         <span style="color:#75715e">// return !str.startsWith(&#39;http://localhost&#39;) &amp;&amp; !str.startsWith(&#39;https://conight.com&#39;);
@@ -330,7 +330,7 @@ if (!doNotTrack) {
 <p><code>manifest</code> 可以理解为 <code>PWA</code> 对于浏览器的声明文件。告诉浏览器该怎么安装你的 <code>PWA</code>。
 具体字段定义可参考 <a href="https://developers.google.com/web/fundamentals/web-app-manifest/">官方文档</a> 。</p>
 <p>下面是我博客的 <code>manifest</code>：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Conight&#39;s Blog&#34;</span>,
   <span style="color:#f92672">&#34;short_name&#34;</span>: <span style="color:#e6db74">&#34;Conight&#39;s Blog&#34;</span>,
   <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Share the world.&#34;</span>,
@@ -358,7 +358,7 @@ if (!doNotTrack) {
 可以使用在线工具 <a href="https://favicomatic.com/">favicomatic.com</a> 或 <a href="https://realfavicongenerator.net/">realfavicongenerator.net</a></li>
 </ul>
 <p>放置 <code>manifest</code> 文件到网站目录并包含到 <code>head</code> 模板中。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manifest&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/manifest.json&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manifest&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/manifest.json&#34;</span>&gt;
 </code></pre></div><ul>
 <li><a href="https://realfavicongenerator.net/">realfavicongenerator.net</a> 网站生成的全套图标及资源文件中包含 <code>manifest</code> ，注意更改。</li>
 </ul>
@@ -393,10 +393,10 @@ You can even use Lighthouse in continuous integration systems to catch regressio
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>渐进式增强WEB应用。<a href="https://developers.google.com/web/progressive-web-apps" title="PWA">官网</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>渐进式增强WEB应用。<a href="https://developers.google.com/web/progressive-web-apps" title="PWA">官网</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>基于 <code>Golang</code> 的个人静态博客框架。<a href="https://gohugo.io/" title="Hugo">官网</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>基于 <code>Golang</code> 的个人静态博客框架。<a href="https://gohugo.io/" title="Hugo">官网</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

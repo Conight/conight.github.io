@@ -240,7 +240,7 @@ uuid-devel.x86_64 1.6.2-26.el7
 </code></pre><h1 id="scene">Scene<a href="#scene" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <h2 id="description">Description<a href="#description" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>Compile install <code>Python 3.7.2</code> on <code>Centos7</code> with error blow</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">building <span style="color:#e6db74">&#39;_uuid&#39;</span> extension
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">building <span style="color:#e6db74">&#39;_uuid&#39;</span> extension
 gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std<span style="color:#f92672">=</span>c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror<span style="color:#f92672">=</span>implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o
 In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0:
 /usr/include/uuid.h:94:24: error: conflicting types <span style="color:#66d9ef">for</span> ‘uuid_t’
@@ -287,11 +287,11 @@ Just remove one to fix this.</p>
 </ul>
 <h1 id="resolve">Resolve<a href="#resolve" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p>Change source code in <code>Modules/_uuidmodule.c</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vi Modules/_uuidmodule.c
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vi Modules/_uuidmodule.c
 </code></pre></div><p>Delete line 6 and change line 7 as blow</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#elif defined(HAVE_UUID_H)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#elif defined(HAVE_UUID_H)
 </span></code></pre></div><p>or patch this file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Modules/_uuidmodule.c       2019-01-11 15:39:04.470000000 -0500
 </span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -3,8 +3,7 @@
 </span><span style="color:#75715e"></span> #include &#34;Python.h&#34;
@@ -304,7 +304,7 @@ Just remove one to fix this.</p>
  #endif
 </code></pre></div><p>Download <a href="/posts_assets/attachment/fix-python-compile-uuid-error/uuidmodule.patch" title="uuidmodule.patch"><code>uuidmodule.patch</code></a>
 to Python source code root path and execute</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">patch -p0 &lt; uuidmodule.patch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">patch -p0 &lt; uuidmodule.patch
 </code></pre></div><p>All done!</p>
 
       </div></div>
