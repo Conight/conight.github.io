@@ -98,23 +98,24 @@ if (!doNotTrack) {
 
 <script src="https://conight.com/assets/reg_sw.js"></script>
 
-<link rel="preload" href="https://mc.yandex.ru">
-<link rel="preconnect" href="https://mc.yandex.ru">
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+        m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(73782454, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
+    ym(73782454, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+        ecommerce: "dataLayer"
+    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/73782454" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/73782454" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
 
 
 </head>
@@ -233,9 +234,13 @@ if (!doNotTrack) {
         
 
         
-          <img src="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp" class="post-cover" alt="Hugo with PWA" />
-        
+  <img src="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp"
+    class="post-cover"
+    alt="Hugo with PWA"
+    title="Cover Image" />
 
+
+      
         <div class="post-content">
           
           Progressive Web App (PWA) cook with Hugo.
@@ -277,6 +282,8 @@ if (!doNotTrack) {
 
         
 
+
+      
         <div class="post-content">
           
           Compile install python on Centos7 failed, even with uuid-devel installed.

@@ -6,12 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Progressive Web App (PWA)1 作为 Google 在 2016 年提出的概念，目的是让网页体验更加接近于原生应用。
-本文记录把 PWA 结合 Hugo2 的过程，使个人博客更加现代化。
-Service Workers 注册 首先对 Hugo 添加 Service Workers 支持的 Js 文件：sw.js。 文件可从 offline-first-sw 下载。
-文件下载之后，放置到 Hugo 可读取的目录下。比如 /static 目录。
-创建一个 footer 的 Partial Templates 并添加注册 Service Workers 的代码。
-if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator.serviceWorker.controller) { let links = document.querySelectorAll( PREFETCH_LINK_RELS.map((rel) =&amp;gt; { return &amp;#39;link[rel=&amp;#39;&#43;rel&#43;&amp;#39;]&amp;#39;; })." />
+<meta name="description" content="Progressive Web App (PWA) 与 Hugo 结合。" />
 <meta name="keywords" content="Hugo, PWA" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://conight.com/zh/posts/hugo-with-progressive-web-app/" />
@@ -101,23 +96,24 @@ if (!doNotTrack) {
 
 <script src="https://conight.com/assets/reg_sw.js"></script>
 
-<link rel="preload" href="https://mc.yandex.ru">
-<link rel="preconnect" href="https://mc.yandex.ru">
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+        m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(73782454, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
+    ym(73782454, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+        ecommerce: "dataLayer"
+    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/73782454" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/73782454" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
 
 
 </head>
@@ -213,11 +209,15 @@ if (!doNotTrack) {
   <div class="post-meta">
     
       <span class="post-date">
-        2020-01-16 [Updated: 2020-01-16]
+        2020-01-16
+        
+          [Updated: 2020-01-16]
+        
       </span>
     
     
-    <span class="post-author">:: Conight</span>
+      <span class="post-author">:: Conight</span>
+    
     
   </div>
 
@@ -232,10 +232,12 @@ if (!doNotTrack) {
     
   </span>
   
+  
+  <img src="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp"
+    class="post-cover"
+    alt="Hugo 与 PWA"
+    title="Cover Image" />
 
-  
-    <img src="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp" class="post-cover" alt="Hugo 与 PWA" />
-  
 
   
 

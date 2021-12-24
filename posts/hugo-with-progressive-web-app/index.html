@@ -6,12 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
-We will cook it with Hugo1 to make Hugo more modernization.
-Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
-After download, put it to Hugo&amp;rsquo;s readable directory. Eg. /static
-Add or modify footer based Partial Templates, then add code to register Service Workers.
-if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator." />
+<meta name="description" content="Progressive Web App (PWA) cook with Hugo." />
 <meta name="keywords" content="Hugo, PWA" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://conight.com/posts/hugo-with-progressive-web-app/" />
@@ -101,23 +96,24 @@ if (!doNotTrack) {
 
 <script src="https://conight.com/assets/reg_sw.js"></script>
 
-<link rel="preload" href="https://mc.yandex.ru">
-<link rel="preconnect" href="https://mc.yandex.ru">
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+        m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(73782454, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
+    ym(73782454, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+        ecommerce: "dataLayer"
+    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/73782454" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/73782454" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
 
 
 </head>
@@ -213,11 +209,15 @@ if (!doNotTrack) {
   <div class="post-meta">
     
       <span class="post-date">
-        2020-01-16 [Updated: 2020-01-16]
+        2020-01-16
+        
+          [Updated: 2020-01-16]
+        
       </span>
     
     
-    <span class="post-author">:: Conight</span>
+      <span class="post-author">:: Conight</span>
+    
     
   </div>
 
@@ -232,10 +232,12 @@ if (!doNotTrack) {
     
   </span>
   
+  
+  <img src="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp"
+    class="post-cover"
+    alt="Hugo with PWA"
+    title="Cover Image" />
 
-  
-    <img src="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp" class="post-cover" alt="Hugo with PWA" />
-  
 
   
 
