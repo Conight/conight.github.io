@@ -245,42 +245,42 @@ uuid-devel.x86_64 1.6.2-26.el7
 </code></pre><h1 id="场景">场景<a href="#场景" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <h2 id="描述">描述<a href="#描述" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>在 <code>Centos7</code> 通过源码编译安装 <code>Python 3.7.2</code> ，出现以下错误</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">building <span style="color:#e6db74">&#39;_uuid&#39;</span> extension
-gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std<span style="color:#f92672">=</span>c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror<span style="color:#f92672">=</span>implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o
-In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0:
-/usr/include/uuid.h:94:24: error: conflicting types <span style="color:#66d9ef">for</span> ‘uuid_t’
- typedef struct uuid_st uuid_t;
-                        ^
-In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:5:0:
-/usr/include/uuid/uuid.h:44:23: note: previous declaration of ‘uuid_t’ was here
- typedef unsigned char uuid_t<span style="color:#f92672">[</span>16<span style="color:#f92672">]</span>;
-                       ^
-In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0:
-/usr/include/uuid.h:107:22: error: conflicting types <span style="color:#66d9ef">for</span> ‘uuid_compare’
- extern uuid_rc_t     uuid_compare  <span style="color:#f92672">(</span>const uuid_t  *_uuid, const uuid_t *_uuid2, int *_result<span style="color:#f92672">)</span>;
-                      ^
-In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:5:0:
-/usr/include/uuid/uuid.h:73:5: note: previous declaration of ‘uuid_compare’ was here
- int uuid_compare<span style="color:#f92672">(</span>const uuid_t uu1, const uuid_t uu2<span style="color:#f92672">)</span>;
-     ^
-/home/tt/Python-3.7.2/Modules/_uuidmodule.c: In <span style="color:#66d9ef">function</span> ‘py_uuid_generate_time_safe’:
-/home/tt/Python-3.7.2/Modules/_uuidmodule.c:15:12: error: storage size of ‘uuid’ isn’t known
-     uuid_t uuid;
-            ^
-/home/tt/Python-3.7.2/Modules/_uuidmodule.c:15:12: warning: unused variable ‘uuid’ <span style="color:#f92672">[</span>-Wunused-variable<span style="color:#f92672">]</span>
-/home/tt/Python-3.7.2/Modules/_uuidmodule.c:35:1: warning: control reaches end of non-void <span style="color:#66d9ef">function</span> <span style="color:#f92672">[</span>-Wreturn-type<span style="color:#f92672">]</span>
- <span style="color:#f92672">}</span>
- ^
-
-The following modules found by detect_modules<span style="color:#f92672">()</span> in setup.py, have been
-built by the Makefile instead, as configured by the Setup files:
-_abc                  atexit                pwd                
-time                                                           
-
-
-Failed to build these modules:
-_uuid
-</code></pre></div><h1 id="分析">分析<a href="#分析" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>building <span style="color:#e6db74">&#39;_uuid&#39;</span> extension
+</span></span><span style="display:flex;"><span>gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std<span style="color:#f92672">=</span>c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror<span style="color:#f92672">=</span>implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o
+</span></span><span style="display:flex;"><span>In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0:
+</span></span><span style="display:flex;"><span>/usr/include/uuid.h:94:24: error: conflicting types <span style="color:#66d9ef">for</span> ‘uuid_t’
+</span></span><span style="display:flex;"><span> typedef struct uuid_st uuid_t;
+</span></span><span style="display:flex;"><span>                        ^
+</span></span><span style="display:flex;"><span>In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:5:0:
+</span></span><span style="display:flex;"><span>/usr/include/uuid/uuid.h:44:23: note: previous declaration of ‘uuid_t’ was here
+</span></span><span style="display:flex;"><span> typedef unsigned char uuid_t<span style="color:#f92672">[</span>16<span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>                       ^
+</span></span><span style="display:flex;"><span>In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0:
+</span></span><span style="display:flex;"><span>/usr/include/uuid.h:107:22: error: conflicting types <span style="color:#66d9ef">for</span> ‘uuid_compare’
+</span></span><span style="display:flex;"><span> extern uuid_rc_t     uuid_compare  <span style="color:#f92672">(</span>const uuid_t  *_uuid, const uuid_t *_uuid2, int *_result<span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>                      ^
+</span></span><span style="display:flex;"><span>In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:5:0:
+</span></span><span style="display:flex;"><span>/usr/include/uuid/uuid.h:73:5: note: previous declaration of ‘uuid_compare’ was here
+</span></span><span style="display:flex;"><span> int uuid_compare<span style="color:#f92672">(</span>const uuid_t uu1, const uuid_t uu2<span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>     ^
+</span></span><span style="display:flex;"><span>/home/tt/Python-3.7.2/Modules/_uuidmodule.c: In <span style="color:#66d9ef">function</span> ‘py_uuid_generate_time_safe’:
+</span></span><span style="display:flex;"><span>/home/tt/Python-3.7.2/Modules/_uuidmodule.c:15:12: error: storage size of ‘uuid’ isn’t known
+</span></span><span style="display:flex;"><span>     uuid_t uuid;
+</span></span><span style="display:flex;"><span>            ^
+</span></span><span style="display:flex;"><span>/home/tt/Python-3.7.2/Modules/_uuidmodule.c:15:12: warning: unused variable ‘uuid’ <span style="color:#f92672">[</span>-Wunused-variable<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>/home/tt/Python-3.7.2/Modules/_uuidmodule.c:35:1: warning: control reaches end of non-void <span style="color:#66d9ef">function</span> <span style="color:#f92672">[</span>-Wreturn-type<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span> ^
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The following modules found by detect_modules<span style="color:#f92672">()</span> in setup.py, have been
+</span></span><span style="display:flex;"><span>built by the Makefile instead, as configured by the Setup files:
+</span></span><span style="display:flex;"><span>_abc                  atexit                pwd                
+</span></span><span style="display:flex;"><span>time                                                           
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Failed to build these modules:
+</span></span><span style="display:flex;"><span>_uuid
+</span></span></code></pre></div><h1 id="分析">分析<a href="#分析" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p>查看报错信息发现问题原因是因为编译过程中，读取到俩个 <code>uuid.h</code> 头文件，俩个头文件中的变量 <code>uuid_t uuid_compare</code> 类型不一致，造成冲突 <code>(conflicting types)</code> ，编译失败。</p>
 <p>进入目录 <code>/usr/include</code> 发现，在本目录下有 <code>uuid.h</code> <code>uuid/uuid.h</code> 俩个头文件文件。要修复问提的话，不要同时包含这俩个文件即可。</p>
 <ul>
@@ -289,24 +289,24 @@ _uuid
 </ul>
 <h1 id="解决">解决<a href="#解决" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p>修改源码文件 <code>Modules/_uuidmodule.c</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vi Modules/_uuidmodule.c
-</code></pre></div><p>删除第6行，将第7行改为</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#elif defined(HAVE_UUID_H)
-</span></code></pre></div><p>或打入以下补丁</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Modules/_uuidmodule.c       2019-01-11 15:39:04.470000000 -0500
-</span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -3,8 +3,7 @@
-</span><span style="color:#75715e"></span> #include &#34;Python.h&#34;
- #ifdef HAVE_UUID_UUID_H
- #include &lt;uuid/uuid.h&gt;
-<span style="color:#f92672">-#endif
-</span><span style="color:#f92672">-#ifdef HAVE_UUID_H
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+#elif defined(HAVE_UUID_H)
-</span><span style="color:#a6e22e"></span> #include &lt;uuid.h&gt;
- #endif
-</code></pre></div><p>下载 <a href="/posts_assets/attachment/fix-python-compile-uuid-error/uuidmodule.patch" title="uuidmodule.patch"><code>uuidmodule.patch</code></a> 并放于源码目录下，执行命令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">patch -p0 &lt; uuidmodule.patch
-</code></pre></div><p>就可以继续愉快的 <code>make</code> 了！大功告成</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vi Modules/_uuidmodule.c
+</span></span></code></pre></div><p>删除第6行，将第7行改为</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#elif defined(HAVE_UUID_H)
+</span></span></span></code></pre></div><p>或打入以下补丁</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Modules/_uuidmodule.c       2019-01-11 15:39:04.470000000 -0500
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -3,8 +3,7 @@
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> #include &#34;Python.h&#34;
+</span></span><span style="display:flex;"><span> #ifdef HAVE_UUID_UUID_H
+</span></span><span style="display:flex;"><span> #include &lt;uuid/uuid.h&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-#ifdef HAVE_UUID_H
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+#elif defined(HAVE_UUID_H)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span> #include &lt;uuid.h&gt;
+</span></span><span style="display:flex;"><span> #endif
+</span></span></code></pre></div><p>下载 <a href="/posts_assets/attachment/fix-python-compile-uuid-error/uuidmodule.patch" title="uuidmodule.patch"><code>uuidmodule.patch</code></a> 并放于源码目录下，执行命令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>patch -p0 &lt; uuidmodule.patch
+</span></span></code></pre></div><p>就可以继续愉快的 <code>make</code> 了！大功告成</p>
 
       </div></div>
 
@@ -335,7 +335,7 @@ _uuid
   
   <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -385,7 +385,7 @@ _uuid
 <script src="https://conight.com/assets/leonsans/util.js"></script>
 <script src="https://conight.com/assets/leonsans/logo.js"></script>
 
-<script data-ad-client="ca-pub-9402374999951815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9402374999951815" crossorigin="anonymous"></script>
 
 
   
