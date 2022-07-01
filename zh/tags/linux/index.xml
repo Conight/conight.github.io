@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Conight&#39;s Blog</title>
-    <link>https://conight.com/zh/tags/linux/</link>
+    <link>https://conight.com/tags/linux/</link>
     <description>Recent content in Linux on Conight&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Conight All Rights Reserved.</copyright>
-    <lastBuildDate>Fri, 11 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://conight.com/zh/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://conight.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Python 源码编译时 uuid 模块报错</title>
-      <link>https://conight.com/zh/posts/fix-python-compile-uuid-error/</link>
+      <title>Compile install python raise uuid error on Centos</title>
+      <link>https://conight.com/posts/fix-python-compile-uuid-error/</link>
       <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://conight.com/zh/posts/fix-python-compile-uuid-error/</guid>
-      <description>系统环境 CentOS Linux release 7.6.1810 (Core) gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) Python-3.7.2 uuid-devel.x86_64 1.6.2-26.el7 场景 描述 在 Centos7 通过源码编译安装 Python 3.7.2 ，出现以下错误
+      <guid>https://conight.com/posts/fix-python-compile-uuid-error/</guid>
+      <description>System environment CentOS Linux release 7.6.1810 (Core) gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) Python-3.7.2 uuid-devel.x86_64 1.6.2-26.el7 Scene Description Compile install Python 3.7.2 on Centos7 with error blow
 building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std=c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror=implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0: /usr/include/uuid.h:94:24: error: conflicting types for ‘uuid_t’  typedef struct uuid_st uuid_t;  ^ In file included from /home/tt/Python-3.</description>
-      <content>&lt;h1 id=&#34;系统环境&#34;&gt;系统环境&lt;/h1&gt;
+      <content>&lt;h1 id=&#34;system-environment&#34;&gt;System environment&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;CentOS Linux release 7.6.1810 (Core)
 gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC)
 Python-3.7.2
 uuid-devel.x86_64 1.6.2-26.el7
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;场景&#34;&gt;场景&lt;/h1&gt;
-&lt;h2 id=&#34;描述&#34;&gt;描述&lt;/h2&gt;
-&lt;p&gt;在 &lt;code&gt;Centos7&lt;/code&gt; 通过源码编译安装 &lt;code&gt;Python 3.7.2&lt;/code&gt; ，出现以下错误&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;scene&#34;&gt;Scene&lt;/h1&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;Compile install &lt;code&gt;Python 3.7.2&lt;/code&gt; on &lt;code&gt;Centos7&lt;/code&gt; with error blow&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;building &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;_uuid&amp;#39;&lt;/span&gt; extension
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0:
@@ -59,19 +59,22 @@ uuid-devel.x86_64 1.6.2-26.el7
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Failed to build these modules:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;_uuid
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;分析&#34;&gt;分析&lt;/h1&gt;
-&lt;p&gt;查看报错信息发现问题原因是因为编译过程中，读取到俩个 &lt;code&gt;uuid.h&lt;/code&gt; 头文件，俩个头文件中的变量 &lt;code&gt;uuid_t uuid_compare&lt;/code&gt; 类型不一致，造成冲突 &lt;code&gt;(conflicting types)&lt;/code&gt; ，编译失败。&lt;/p&gt;
-&lt;p&gt;进入目录 &lt;code&gt;/usr/include&lt;/code&gt; 发现，在本目录下有 &lt;code&gt;uuid.h&lt;/code&gt; &lt;code&gt;uuid/uuid.h&lt;/code&gt; 俩个头文件文件。要修复问提的话，不要同时包含这俩个文件即可。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;analyse&#34;&gt;Analyse&lt;/h1&gt;
+&lt;p&gt;According error message, compiler read two different head file &lt;code&gt;uuid.h&lt;/code&gt;,
+but variable &lt;code&gt;uuid_t uuid_compare&lt;/code&gt; in both files have different type,
+causes &lt;code&gt;(conflicting types)&lt;/code&gt; and compile failed.&lt;/p&gt;
+&lt;p&gt;Enter &lt;code&gt;/usr/include&lt;/code&gt;, there are two head file &lt;code&gt;uuid.h&lt;/code&gt; &lt;code&gt;uuid/uuid.h&lt;/code&gt;.
+Just remove one to fix this.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/usr/include/uuid.h&lt;/code&gt; 由 &lt;code&gt;uuid-devel&lt;/code&gt; 包提供&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/usr/include/uuid/uuid.h&lt;/code&gt; 由 &lt;code&gt;libuuid-devel&lt;/code&gt; 包提供&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/usr/include/uuid.h&lt;/code&gt; provided by &lt;code&gt;uuid-devel&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/usr/include/uuid/uuid.h&lt;/code&gt; provided by &lt;code&gt;libuuid-devel&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;解决&#34;&gt;解决&lt;/h1&gt;
-&lt;p&gt;修改源码文件 &lt;code&gt;Modules/_uuidmodule.c&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;resolve&#34;&gt;Resolve&lt;/h1&gt;
+&lt;p&gt;Change source code in &lt;code&gt;Modules/_uuidmodule.c&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi Modules/_uuidmodule.c
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;删除第6行，将第7行改为&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Delete line 6 and change line 7 as blow&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#elif defined(HAVE_UUID_H)
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或打入以下补丁&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or patch this file&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;+++ Modules/_uuidmodule.c       2019-01-11 15:39:04.470000000 -0500
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;@@ -3,8 +3,7 @@
@@ -83,9 +86,10 @@ uuid-devel.x86_64 1.6.2-26.el7
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;+#elif defined(HAVE_UUID_H)
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&lt;/span&gt; #include &amp;lt;uuid.h&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; #endif
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下载 &lt;a href=&#34;https://conight.com/posts_assets/attachment/fix-python-compile-uuid-error/uuidmodule.patch&#34; title=&#34;uuidmodule.patch&#34;&gt;&lt;code&gt;uuidmodule.patch&lt;/code&gt;&lt;/a&gt; 并放于源码目录下，执行命令&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Download &lt;a href=&#34;https://conight.com/posts_assets/attachment/fix-python-compile-uuid-error/uuidmodule.patch&#34; title=&#34;uuidmodule.patch&#34;&gt;&lt;code&gt;uuidmodule.patch&lt;/code&gt;&lt;/a&gt;
+to Python source code root path and execute&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;patch -p0 &amp;lt; uuidmodule.patch
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就可以继续愉快的 &lt;code&gt;make&lt;/code&gt; 了！大功告成&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;All done!&lt;/p&gt;
 </content>
     </item>
     

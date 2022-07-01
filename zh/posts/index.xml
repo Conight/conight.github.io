@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Conight&#39;s Blog</title>
-    <link>https://conight.com/zh/posts/</link>
+    <link>https://conight.com/posts/</link>
     <description>Recent content in Posts on Conight&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2020 Conight All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://conight.com/zh/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://conight.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hugo 与 PWA</title>
-      <link>https://conight.com/zh/posts/hugo-with-progressive-web-app/</link>
+      <title>Hugo with PWA</title>
+      <link>https://conight.com/posts/hugo-with-progressive-web-app/</link>
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://conight.com/zh/posts/hugo-with-progressive-web-app/</guid>
-      <description>Progressive Web App (PWA)1 作为 Google 在 2016 年提出的概念，目的是让网页体验更加接近于原生应用。
-本文记录把 PWA 结合 Hugo2 的过程，使个人博客更加现代化。
-Service Workers 注册 首先对 Hugo 添加 Service Workers 支持的 Js 文件：sw.js。 文件可从 offline-first-sw 下载。
-文件下载之后，放置到 Hugo 可读取的目录下。比如 /static 目录。
-创建一个 footer 的 Partial Templates 并添加注册 Service Workers 的代码。
-if(&amp;#39;serviceWorker&amp;#39; in navigator) {  const PREFETCH = true;  const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;];  function prefetchCache() {  if(navigator.serviceWorker.controller) {  let links = document.querySelectorAll(  PREFETCH_LINK_RELS.</description>
-      <content>&lt;p&gt;&lt;code&gt;Progressive Web App (PWA)&lt;/code&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 作为 &lt;code&gt;Google&lt;/code&gt; 在 &lt;code&gt;2016&lt;/code&gt; 年提出的概念，目的是让网页体验更加接近于原生应用。&lt;/p&gt;
-&lt;p&gt;本文记录把 PWA 结合 Hugo&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; 的过程，使个人博客更加现代化。&lt;/p&gt;
+      <guid>https://conight.com/posts/hugo-with-progressive-web-app/</guid>
+      <description>To make the web experience closer to native applications, Google introduced the concept of Progressive Web App (PWA) at 2016.
+We will cook it with Hugo1 to make Hugo more modernization.
+Service Workers Register First we add sw.js from offline-first-sw make Hugo support Service Workers.
+After download, put it to Hugo&amp;rsquo;s readable directory. Eg. /static
+Add or modify footer based Partial Templates, then add code to register Service Workers.
+if(&amp;#39;serviceWorker&amp;#39; in navigator) { const PREFETCH = true; const PREFETCH_LINK_RELS = [&amp;#39;index&amp;#39;,&amp;#39;next&amp;#39;, &amp;#39;prev&amp;#39;, &amp;#39;prefetch&amp;#39;]; function prefetchCache() { if(navigator.</description>
+      <content>&lt;p&gt;To make the web experience closer to native applications,
+Google introduced the concept of &lt;code&gt;Progressive Web App (PWA)&lt;/code&gt; at 2016.&lt;/p&gt;
+&lt;p&gt;We will cook it with Hugo&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; to make Hugo more modernization.&lt;/p&gt;
 &lt;h1 id=&#34;service-workers&#34;&gt;Service Workers&lt;/h1&gt;
-&lt;h2 id=&#34;注册&#34;&gt;注册&lt;/h2&gt;
-&lt;p&gt;首先对 &lt;code&gt;Hugo&lt;/code&gt; 添加 &lt;code&gt;Service Workers&lt;/code&gt; 支持的 &lt;code&gt;Js&lt;/code&gt; 文件：&lt;code&gt;sw.js&lt;/code&gt;。
-文件可从 &lt;a href=&#34;https://github.com/wildhaber/offline-first-sw&#34;&gt;offline-first-sw&lt;/a&gt; 下载。&lt;/p&gt;
-&lt;p&gt;文件下载之后，放置到 &lt;code&gt;Hugo&lt;/code&gt; 可读取的目录下。比如 &lt;code&gt;/static&lt;/code&gt; 目录。&lt;/p&gt;
-&lt;p&gt;创建一个 &lt;code&gt;footer&lt;/code&gt; 的 &lt;code&gt;Partial Templates&lt;/code&gt; 并添加注册 &lt;code&gt;Service Workers&lt;/code&gt; 的代码。&lt;/p&gt;
+&lt;h2 id=&#34;register&#34;&gt;Register&lt;/h2&gt;
+&lt;p&gt;First we add &lt;code&gt;sw.js&lt;/code&gt; from &lt;a href=&#34;https://github.com/wildhaber/offline-first-sw&#34;&gt;offline-first-sw&lt;/a&gt; make Hugo support &lt;code&gt;Service Workers&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After download, put it to Hugo&amp;rsquo;s readable directory. Eg. &lt;code&gt;/static&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Add or modify &lt;code&gt;footer&lt;/code&gt; based &lt;code&gt;Partial Templates&lt;/code&gt;, then add code to register &lt;code&gt;Service Workers&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;serviceWorker&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;navigator&lt;/span&gt;) {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;PREFETCH&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;PREFETCH_LINK_RELS&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;index&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;next&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prev&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;prefetch&amp;#39;&lt;/span&gt;];
@@ -65,13 +65,16 @@ if(&amp;#39;serviceWorker&amp;#39; in navigator) {  const PREFETCH = true;  cons
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        });
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
 &lt;h3 id=&#34;cache_version--number-&#34;&gt;CACHE_VERSION &lt;code&gt;{ number }&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;声明当前 &lt;code&gt;Web APP&lt;/code&gt; 的版本，需要根据缓存的文件目录来决定是否更新版本号。
-只有版本号变更，浏览器才会缓存新的资源文件并替换旧版本下的缓存。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The CACHE_VERSION is important when you update your service-worker. The cache-location will be updated and the old legacy cache is getting deleted.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;CACHE_VERSION&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;base_cache_files--array-&#34;&gt;BASE_CACHE_FILES &lt;code&gt;{ array }&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;定义始终需要缓存的文件、页面路径。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Define files that in this list which always needs to be cached from the beginning.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;BASE_CACHE_FILES&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// page cache
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;,
@@ -88,30 +91,38 @@ if(&amp;#39;serviceWorker&amp;#39; in navigator) {  const PREFETCH = true;  cons
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/favicon.ico&amp;#39;&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;];
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;offline_cache_files--array-&#34;&gt;OFFLINE_CACHE_FILES &lt;code&gt;{ array }&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;定义离线页面所需的文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Define files necessary for your offline page.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;OFFLINE_CACHE_FILES&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/offline.html&amp;#39;&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;];
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;not_found_cache_files--array-&#34;&gt;NOT_FOUND_CACHE_FILES &lt;code&gt;{ array }&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;定义 404 页面所需的文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Define files necessary for your 404 page.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NOT_FOUND_CACHE_FILES&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/404.html&amp;#39;&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;];
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;cache_blacklist--array&#34;&gt;CACHE_BLACKLIST &lt;code&gt;{ array}&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;资源缓存黑名单，在这个名单中的地址、域名不会缓存资源。建议不要包含本地测试地址。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a list of functions a URL gets checked against if it should be cached or not.
+If one method returns true this resource will not be cached.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;CACHE_BLACKLIST&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    (&lt;span style=&#34;color:#a6e22e&#34;&gt;str&lt;/span&gt;) =&amp;gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;str&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;startsWith&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;https://conight.com&amp;#39;&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// return !str.startsWith(&amp;#39;http://localhost&amp;#39;) &amp;amp;&amp;amp; !str.startsWith(&amp;#39;https://conight.com&amp;#39;);
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    },
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;];
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;Chrome&lt;/code&gt; 卡法这模式下 &lt;code&gt;Cache Storage&lt;/code&gt; 中根据配置缓存的各种资源：&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It will cache all you specified resource or path.
+You&amp;rsquo;ll find it in Chrome&amp;rsquo;s &lt;code&gt;Developer&#39;s Tools -&amp;gt; Cache Storage&lt;/code&gt; tab.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/Cache.webp&#34; alt=&#34;Cache Storage&#34; title=&#34;Cache Storage&#34;&gt;
 &lt;em&gt;Cache Storage&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;manifestjson&#34;&gt;manifest.json&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;manifest&lt;/code&gt; 可以理解为 &lt;code&gt;PWA&lt;/code&gt; 对于浏览器的声明文件。告诉浏览器该怎么安装你的 &lt;code&gt;PWA&lt;/code&gt;。
-具体字段定义可参考 &lt;a href=&#34;https://developers.google.com/web/fundamentals/web-app-manifest/&#34;&gt;官方文档&lt;/a&gt; 。&lt;/p&gt;
-&lt;p&gt;下面是我博客的 &lt;code&gt;manifest&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;manifest&lt;/code&gt; is a decliner file to tell browser how is your PWA look like,.
+You can find all manifest properties at &lt;a href=&#34;https://developers.google.com/web/fundamentals/web-app-manifest/&#34;&gt;Official website&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;My blog&amp;rsquo;s &lt;code&gt;manifest&lt;/code&gt; blow:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Conight&amp;#39;s Blog&amp;#34;&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;short_name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Conight&amp;#39;s Blog&amp;#34;&lt;/span&gt;,
@@ -135,72 +146,64 @@ if(&amp;#39;serviceWorker&amp;#39; in navigator) {  const PREFETCH = true;  cons
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;theme_color&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;#222128&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;必须有 &lt;code&gt;name&lt;/code&gt; 或者 &lt;code&gt;short_name&lt;/code&gt; 其一。&lt;/li&gt;
-&lt;li&gt;声明图标。也就是 &lt;code&gt;icons&lt;/code&gt; 域。&lt;code&gt;Google&lt;/code&gt; 官方建议 &lt;code&gt;provide icons in increments of 48dp&lt;/code&gt; 。
-可以使用在线工具 &lt;a href=&#34;https://favicomatic.com/&#34;&gt;favicomatic.com&lt;/a&gt; 或 &lt;a href=&#34;https://realfavicongenerator.net/&#34;&gt;realfavicongenerator.net&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;You must provide at least the &lt;code&gt;short_name&lt;/code&gt; or &lt;code&gt;name&lt;/code&gt; property.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;icons&lt;/code&gt; is an array of image objects. Each object should include the src, a sizes property, and the type of image.
+You can use online tools if you like: &lt;a href=&#34;https://favicomatic.com/&#34;&gt;favicomatic.com&lt;/a&gt; or &lt;a href=&#34;https://realfavicongenerator.net/&#34;&gt;realfavicongenerator.net&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;放置 &lt;code&gt;manifest&lt;/code&gt; 文件到网站目录并包含到 &lt;code&gt;head&lt;/code&gt; 模板中。&lt;/p&gt;
+&lt;p&gt;Then put it in &lt;code&gt;head&lt;/code&gt; template:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;manifest&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/manifest.json&amp;#34;&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://realfavicongenerator.net/&#34;&gt;realfavicongenerator.net&lt;/a&gt; 网站生成的全套图标及资源文件中包含 &lt;code&gt;manifest&lt;/code&gt; ，注意更改。&lt;/li&gt;
+&lt;li&gt;It will automatic contain &lt;code&gt;manifest&lt;/code&gt; file if you use &lt;a href=&#34;https://realfavicongenerator.net/&#34;&gt;realfavicongenerator.net&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;lighthouse&#34;&gt;Lighthouse&lt;/h1&gt;
-&lt;p&gt;使用 &lt;code&gt;Chrome&lt;/code&gt; 自带的检测工具测试下网站对 &lt;code&gt;PWA&lt;/code&gt; 的支持。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Lighthouse, an open-source, automated tool for improving the quality of your Progressive Web Apps,
 eliminates much of the manual testing that was previously required.
 You can even use Lighthouse in continuous integration systems to catch regressions.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;进入 &lt;code&gt;Chrome&lt;/code&gt; 开发者模式，选择 &lt;code&gt;Audits&lt;/code&gt; 功能，注意勾选 &lt;code&gt;Audits -&amp;gt; Progressive Web Apps&lt;/code&gt;。
-检测完成后会有支持情况的一个清单。&lt;/p&gt;
+&lt;p&gt;Enter Chrome&amp;rsquo;s &lt;code&gt;Developer&#39;s Tools -&amp;gt; Audits&lt;/code&gt;, and check &lt;code&gt;Progressive Web Apps&lt;/code&gt;.
+After tests, it will show you website&amp;rsquo;s report.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/Lighthouse.webp&#34; alt=&#34;Lighthouse&#34; title=&#34;Lighthouse&#34;&gt;
 &lt;em&gt;Lighthouse PWA Audits&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;所有的配置完成后，所有支持 &lt;code&gt;PWA&lt;/code&gt; 的浏览器就会显示可安装的按钮或提示。&lt;/p&gt;
+&lt;p&gt;If configure right, browser which support PWA will show &lt;code&gt;Install&lt;/code&gt; button or notice you add to desktop.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/InstallNotice.webp&#34; alt=&#34;Install Notice&#34; title=&#34;InstallNotice&#34;&gt;
 &lt;em&gt;Install Notice&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;如果没有提示或显示可安装，可进入 &lt;code&gt;Chrome&lt;/code&gt; 开发者模式下 &lt;code&gt;Application -&amp;gt; Manifest&lt;/code&gt;，
-其中 &lt;code&gt;Installability&lt;/code&gt; 下则会提示可能的无法安装的原因：&lt;/p&gt;
+&lt;p&gt;If not, Enter Chrome&amp;rsquo;s &lt;code&gt;Developer&#39;s Tools -&amp;gt; Manifest&lt;/code&gt; and &lt;code&gt;Installability&lt;/code&gt; may show reason.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/Installability.webp&#34; alt=&#34;Installability&#34; title=&#34;Installability&#34;&gt;
 &lt;em&gt;Manifest Installability&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;示例图中无法安装是因为处于隐私模式。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;拓展阅读&#34;&gt;拓展阅读&lt;/h2&gt;
+&lt;h2 id=&#34;expand&#34;&gt;Expand&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.jeremylikness.com/blog/implement-progressive-web-app-hugo/&#34;&gt;Implement a Progressive Web App (PWA) in your Static Website&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/wildhaber/offline-first-sw&#34;&gt;offline-first-sw&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://developers.google.com/web/progressive-web-apps/&#34;&gt;Progressive Web Apps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;渐进式增强WEB应用。&lt;a href=&#34;https://developers.google.com/web/progressive-web-apps&#34; title=&#34;PWA&#34;&gt;官网&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;基于 &lt;code&gt;Golang&lt;/code&gt; 的个人静态博客框架。&lt;a href=&#34;https://gohugo.io/&#34; title=&#34;Hugo&#34;&gt;官网&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;code&gt;Golang&lt;/code&gt; Based static blog framework. &lt;a href=&#34;https://gohugo.io/&#34; title=&#34;Hugo&#34;&gt;Official website&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
+&lt;/div&gt;
 </content>
     </item>
     
     <item>
-      <title>Python 源码编译时 uuid 模块报错</title>
-      <link>https://conight.com/zh/posts/fix-python-compile-uuid-error/</link>
+      <title>Compile install python raise uuid error on Centos</title>
+      <link>https://conight.com/posts/fix-python-compile-uuid-error/</link>
       <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://conight.com/zh/posts/fix-python-compile-uuid-error/</guid>
-      <description>系统环境 CentOS Linux release 7.6.1810 (Core) gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) Python-3.7.2 uuid-devel.x86_64 1.6.2-26.el7 场景 描述 在 Centos7 通过源码编译安装 Python 3.7.2 ，出现以下错误
-building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std=c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror=implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0: /usr/include/uuid.h:94:24: error: conflicting types for ‘uuid_t’  typedef struct uuid_st uuid_t;  ^ In file included from /home/tt/Python-3.</description>
-      <content>&lt;h1 id=&#34;系统环境&#34;&gt;系统环境&lt;/h1&gt;
+      <guid>https://conight.com/posts/fix-python-compile-uuid-error/</guid>
+      <description>System environment CentOS Linux release 7.6.1810 (Core) gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) Python-3.7.2 uuid-devel.x86_64 1.6.2-26.el7 Scene Description Compile install Python 3.7.2 on Centos7 with error blow
+building &amp;#39;_uuid&amp;#39; extension gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std=c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror=implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0: /usr/include/uuid.h:94:24: error: conflicting types for ‘uuid_t’ typedef struct uuid_st uuid_t; ^ In file included from /home/tt/Python-3.</description>
+      <content>&lt;h1 id=&#34;system-environment&#34;&gt;System environment&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;CentOS Linux release 7.6.1810 (Core)
 gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC)
 Python-3.7.2
 uuid-devel.x86_64 1.6.2-26.el7
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;场景&#34;&gt;场景&lt;/h1&gt;
-&lt;h2 id=&#34;描述&#34;&gt;描述&lt;/h2&gt;
-&lt;p&gt;在 &lt;code&gt;Centos7&lt;/code&gt; 通过源码编译安装 &lt;code&gt;Python 3.7.2&lt;/code&gt; ，出现以下错误&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;scene&#34;&gt;Scene&lt;/h1&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;Compile install &lt;code&gt;Python 3.7.2&lt;/code&gt; on &lt;code&gt;Centos7&lt;/code&gt; with error blow&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;building &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;_uuid&amp;#39;&lt;/span&gt; extension
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0:
@@ -236,19 +239,22 @@ uuid-devel.x86_64 1.6.2-26.el7
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Failed to build these modules:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;_uuid
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;分析&#34;&gt;分析&lt;/h1&gt;
-&lt;p&gt;查看报错信息发现问题原因是因为编译过程中，读取到俩个 &lt;code&gt;uuid.h&lt;/code&gt; 头文件，俩个头文件中的变量 &lt;code&gt;uuid_t uuid_compare&lt;/code&gt; 类型不一致，造成冲突 &lt;code&gt;(conflicting types)&lt;/code&gt; ，编译失败。&lt;/p&gt;
-&lt;p&gt;进入目录 &lt;code&gt;/usr/include&lt;/code&gt; 发现，在本目录下有 &lt;code&gt;uuid.h&lt;/code&gt; &lt;code&gt;uuid/uuid.h&lt;/code&gt; 俩个头文件文件。要修复问提的话，不要同时包含这俩个文件即可。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;analyse&#34;&gt;Analyse&lt;/h1&gt;
+&lt;p&gt;According error message, compiler read two different head file &lt;code&gt;uuid.h&lt;/code&gt;,
+but variable &lt;code&gt;uuid_t uuid_compare&lt;/code&gt; in both files have different type,
+causes &lt;code&gt;(conflicting types)&lt;/code&gt; and compile failed.&lt;/p&gt;
+&lt;p&gt;Enter &lt;code&gt;/usr/include&lt;/code&gt;, there are two head file &lt;code&gt;uuid.h&lt;/code&gt; &lt;code&gt;uuid/uuid.h&lt;/code&gt;.
+Just remove one to fix this.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/usr/include/uuid.h&lt;/code&gt; 由 &lt;code&gt;uuid-devel&lt;/code&gt; 包提供&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/usr/include/uuid/uuid.h&lt;/code&gt; 由 &lt;code&gt;libuuid-devel&lt;/code&gt; 包提供&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/usr/include/uuid.h&lt;/code&gt; provided by &lt;code&gt;uuid-devel&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/usr/include/uuid/uuid.h&lt;/code&gt; provided by &lt;code&gt;libuuid-devel&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;解决&#34;&gt;解决&lt;/h1&gt;
-&lt;p&gt;修改源码文件 &lt;code&gt;Modules/_uuidmodule.c&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;resolve&#34;&gt;Resolve&lt;/h1&gt;
+&lt;p&gt;Change source code in &lt;code&gt;Modules/_uuidmodule.c&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi Modules/_uuidmodule.c
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;删除第6行，将第7行改为&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Delete line 6 and change line 7 as blow&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#elif defined(HAVE_UUID_H)
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或打入以下补丁&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or patch this file&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-diff&#34; data-lang=&#34;diff&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;+++ Modules/_uuidmodule.c       2019-01-11 15:39:04.470000000 -0500
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;@@ -3,8 +3,7 @@
@@ -260,9 +266,10 @@ uuid-devel.x86_64 1.6.2-26.el7
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;+#elif defined(HAVE_UUID_H)
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;&lt;/span&gt; #include &amp;lt;uuid.h&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; #endif
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下载 &lt;a href=&#34;https://conight.com/posts_assets/attachment/fix-python-compile-uuid-error/uuidmodule.patch&#34; title=&#34;uuidmodule.patch&#34;&gt;&lt;code&gt;uuidmodule.patch&lt;/code&gt;&lt;/a&gt; 并放于源码目录下，执行命令&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Download &lt;a href=&#34;https://conight.com/posts_assets/attachment/fix-python-compile-uuid-error/uuidmodule.patch&#34; title=&#34;uuidmodule.patch&#34;&gt;&lt;code&gt;uuidmodule.patch&lt;/code&gt;&lt;/a&gt;
+to Python source code root path and execute&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;patch -p0 &amp;lt; uuidmodule.patch
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就可以继续愉快的 &lt;code&gt;make&lt;/code&gt; 了！大功告成&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;All done!&lt;/p&gt;
 </content>
     </item>
     

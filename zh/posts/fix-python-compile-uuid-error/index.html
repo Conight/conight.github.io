@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   
-    <title>Python 源码编译时 uuid 模块报错 :: Conight&#39;s Blog</title>
+    <title>Compile install python raise uuid error on Centos :: Conight&#39;s Blog</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Centos7 编译安装 Python 过程中，即使安装 uuid-devel 也无法成功编译。" />
+<meta name="description" content="Compile install python on Centos7 failed, even with uuid-devel installed." />
 <meta name="keywords" content="Python, uuid" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://conight.com/zh/posts/fix-python-compile-uuid-error/" />
+<link rel="canonical" href="https://conight.com/posts/fix-python-compile-uuid-error/" />
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZHXG39XLE"></script>
@@ -47,11 +47,11 @@ if (!doNotTrack) {
 
 
 
-<meta property="og:locale" content="zh" />
+<meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Python 源码编译时 uuid 模块报错">
-<meta property="og:description" content="Centos7 编译安装 Python 过程中，即使安装 uuid-devel 也无法成功编译。" />
-<meta property="og:url" content="https://conight.com/zh/posts/fix-python-compile-uuid-error/" />
+<meta property="og:title" content="Compile install python raise uuid error on Centos">
+<meta property="og:description" content="Compile install python on Centos7 failed, even with uuid-devel installed." />
+<meta property="og:url" content="https://conight.com/posts/fix-python-compile-uuid-error/" />
 <meta property="og:site_name" content="Conight&#39;s Blog" />
 
   <meta property="og:image" content="https://conight.com/">
@@ -124,7 +124,7 @@ if (!doNotTrack) {
   <header class="header">
   <div class="header__inner">
     <div class="header__logo">
-      <a alt="Logo" aria-label="Logo" href="/zh">
+      <a alt="Logo" aria-label="Logo" href="/">
   <div class="logo" style="background: none">
     <div style="display: none" id="logo-text">
       Conight
@@ -144,11 +144,11 @@ if (!doNotTrack) {
     
       
         
-          <li><a href="/zh/about">About</a></li>
+          <li><a href="/about">About</a></li>
         
       
         
-          <li><a href="/zh/showcase">Showcase</a></li>
+          <li><a href="/showcase">Showcase</a></li>
         
       
       
@@ -158,7 +158,7 @@ if (!doNotTrack) {
     <div class="spacer"></div>
     <ul class="language-selector">
       <ul class="language-selector-current">
-          <li>Chinese ▾</li>
+          <li>English ▾</li>
       </ul>
       <ul class="language-selector__more hidden">
         
@@ -174,11 +174,11 @@ if (!doNotTrack) {
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="/zh/about">About</a></li>
+        <li><a href="/about">About</a></li>
       
     
       
-        <li><a href="/zh/showcase">Showcase</a></li>
+        <li><a href="/showcase">Showcase</a></li>
       
     
     
@@ -204,7 +204,7 @@ if (!doNotTrack) {
     
 <div class="post">
   <h1 class="post-title">
-    <a href="https://conight.com/zh/posts/fix-python-compile-uuid-error/">Python 源码编译时 uuid 模块报错</a></h1>
+    <a href="https://conight.com/posts/fix-python-compile-uuid-error/">Compile install python raise uuid error on Centos</a></h1>
   <div class="post-meta">
     
       <span class="post-date">
@@ -223,11 +223,11 @@ if (!doNotTrack) {
   
   <span class="post-tags">
     
-    #<a href="https://conight.com/zh/tags/python/">Python</a>&nbsp;
+    #<a href="https://conight.com/tags/python/">Python</a>&nbsp;
     
-    #<a href="https://conight.com/zh/tags/linux/">Linux</a>&nbsp;
+    #<a href="https://conight.com/tags/linux/">Linux</a>&nbsp;
     
-    #<a href="https://conight.com/zh/tags/centos/">Centos</a>&nbsp;
+    #<a href="https://conight.com/tags/centos/">Centos</a>&nbsp;
     
   </span>
   
@@ -237,14 +237,14 @@ if (!doNotTrack) {
   
 
   <div class="post-content"><div>
-        <h1 id="系统环境">系统环境<a href="#系统环境" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+        <h1 id="system-environment">System environment<a href="#system-environment" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <pre tabindex="0"><code>CentOS Linux release 7.6.1810 (Core)
 gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC)
 Python-3.7.2
 uuid-devel.x86_64 1.6.2-26.el7
-</code></pre><h1 id="场景">场景<a href="#场景" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<h2 id="描述">描述<a href="#描述" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<p>在 <code>Centos7</code> 通过源码编译安装 <code>Python 3.7.2</code> ，出现以下错误</p>
+</code></pre><h1 id="scene">Scene<a href="#scene" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="description">Description<a href="#description" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Compile install <code>Python 3.7.2</code> on <code>Centos7</code> with error blow</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>building <span style="color:#e6db74">&#39;_uuid&#39;</span> extension
 </span></span><span style="display:flex;"><span>gcc -pthread -fPIC -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -std<span style="color:#f92672">=</span>c99 -Wextra -Wno-unused-result -Wno-unused-parameter -Wno-missing-field-initializers -Werror<span style="color:#f92672">=</span>implicit-function-declaration -I./Include -I/home/tt/py37/include -I. -I/usr/local/include -I/home/tt/Python-3.7.2/Include -I/home/tt/Python-3.7.2 -c /home/tt/Python-3.7.2/Modules/_uuidmodule.c -o build/temp.linux-x86_64-3.7/home/tt/Python-3.7.2/Modules/_uuidmodule.o
 </span></span><span style="display:flex;"><span>In file included from /home/tt/Python-3.7.2/Modules/_uuidmodule.c:8:0:
@@ -280,19 +280,22 @@ uuid-devel.x86_64 1.6.2-26.el7
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Failed to build these modules:
 </span></span><span style="display:flex;"><span>_uuid
-</span></span></code></pre></div><h1 id="分析">分析<a href="#分析" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>查看报错信息发现问题原因是因为编译过程中，读取到俩个 <code>uuid.h</code> 头文件，俩个头文件中的变量 <code>uuid_t uuid_compare</code> 类型不一致，造成冲突 <code>(conflicting types)</code> ，编译失败。</p>
-<p>进入目录 <code>/usr/include</code> 发现，在本目录下有 <code>uuid.h</code> <code>uuid/uuid.h</code> 俩个头文件文件。要修复问提的话，不要同时包含这俩个文件即可。</p>
+</span></span></code></pre></div><h1 id="analyse">Analyse<a href="#analyse" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>According error message, compiler read two different head file <code>uuid.h</code>,
+but variable <code>uuid_t uuid_compare</code> in both files have different type,
+causes <code>(conflicting types)</code> and compile failed.</p>
+<p>Enter <code>/usr/include</code>, there are two head file <code>uuid.h</code> <code>uuid/uuid.h</code>.
+Just remove one to fix this.</p>
 <ul>
-<li><code>/usr/include/uuid.h</code> 由 <code>uuid-devel</code> 包提供</li>
-<li><code>/usr/include/uuid/uuid.h</code> 由 <code>libuuid-devel</code> 包提供</li>
+<li><code>/usr/include/uuid.h</code> provided by <code>uuid-devel</code></li>
+<li><code>/usr/include/uuid/uuid.h</code> provided by <code>libuuid-devel</code></li>
 </ul>
-<h1 id="解决">解决<a href="#解决" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>修改源码文件 <code>Modules/_uuidmodule.c</code></p>
+<h1 id="resolve">Resolve<a href="#resolve" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Change source code in <code>Modules/_uuidmodule.c</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vi Modules/_uuidmodule.c
-</span></span></code></pre></div><p>删除第6行，将第7行改为</p>
+</span></span></code></pre></div><p>Delete line 6 and change line 7 as blow</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#elif defined(HAVE_UUID_H)
-</span></span></span></code></pre></div><p>或打入以下补丁</p>
+</span></span></span></code></pre></div><p>or patch this file</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">--- Modules/_uuidmodule.c.orignal       2019-01-11 15:38:46.995000000 -0500
 </span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+++ Modules/_uuidmodule.c       2019-01-11 15:39:04.470000000 -0500
 </span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span><span style="color:#75715e">@@ -3,8 +3,7 @@
@@ -304,9 +307,10 @@ uuid-devel.x86_64 1.6.2-26.el7
 </span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+#elif defined(HAVE_UUID_H)
 </span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span> #include &lt;uuid.h&gt;
 </span></span><span style="display:flex;"><span> #endif
-</span></span></code></pre></div><p>下载 <a href="/posts_assets/attachment/fix-python-compile-uuid-error/uuidmodule.patch" title="uuidmodule.patch"><code>uuidmodule.patch</code></a> 并放于源码目录下，执行命令</p>
+</span></span></code></pre></div><p>Download <a href="/posts_assets/attachment/fix-python-compile-uuid-error/uuidmodule.patch" title="uuidmodule.patch"><code>uuidmodule.patch</code></a>
+to Python source code root path and execute</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>patch -p0 &lt; uuidmodule.patch
-</span></span></code></pre></div><p>就可以继续愉快的 <code>make</code> 了！大功告成</p>
+</span></span></code></pre></div><p>All done!</p>
 
       </div></div>
 
@@ -320,9 +324,9 @@ uuid-devel.x86_64 1.6.2-26.el7
     <div class="pagination__buttons">
         
         <span class="button previous">
-            <a href="https://conight.com/zh/posts/hugo-with-progressive-web-app/">
+            <a href="https://conight.com/posts/hugo-with-progressive-web-app/">
                 <span class="button__icon">←</span>
-                <span class="button__text">Hugo 与 PWA</span>
+                <span class="button__text">Hugo with PWA</span>
             </a>
         </span>
         
@@ -332,6 +336,7 @@ uuid-devel.x86_64 1.6.2-26.el7
 
   
 
+  
   
   <div id="disqus_thread"></div>
 <script type="application/javascript">
@@ -355,6 +360,7 @@ uuid-devel.x86_64 1.6.2-26.el7
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
+  
 </div>
 
   </div>

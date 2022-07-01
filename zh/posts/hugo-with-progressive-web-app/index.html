@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   
-    <title>Hugo 与 PWA :: Conight&#39;s Blog</title>
+    <title>Hugo with PWA :: Conight&#39;s Blog</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Progressive Web App (PWA) 与 Hugo 结合。" />
+<meta name="description" content="Progressive Web App (PWA) cook with Hugo." />
 <meta name="keywords" content="Hugo, PWA" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://conight.com/zh/posts/hugo-with-progressive-web-app/" />
+<link rel="canonical" href="https://conight.com/posts/hugo-with-progressive-web-app/" />
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZHXG39XLE"></script>
@@ -47,11 +47,11 @@ if (!doNotTrack) {
 
 
 
-<meta property="og:locale" content="zh" />
+<meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Hugo 与 PWA">
-<meta property="og:description" content="Progressive Web App (PWA) 与 Hugo 结合。" />
-<meta property="og:url" content="https://conight.com/zh/posts/hugo-with-progressive-web-app/" />
+<meta property="og:title" content="Hugo with PWA">
+<meta property="og:description" content="Progressive Web App (PWA) cook with Hugo." />
+<meta property="og:url" content="https://conight.com/posts/hugo-with-progressive-web-app/" />
 <meta property="og:site_name" content="Conight&#39;s Blog" />
 
   <meta property="og:image" content="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp">
@@ -124,7 +124,7 @@ if (!doNotTrack) {
   <header class="header">
   <div class="header__inner">
     <div class="header__logo">
-      <a alt="Logo" aria-label="Logo" href="/zh">
+      <a alt="Logo" aria-label="Logo" href="/">
   <div class="logo" style="background: none">
     <div style="display: none" id="logo-text">
       Conight
@@ -144,11 +144,11 @@ if (!doNotTrack) {
     
       
         
-          <li><a href="/zh/about">About</a></li>
+          <li><a href="/about">About</a></li>
         
       
         
-          <li><a href="/zh/showcase">Showcase</a></li>
+          <li><a href="/showcase">Showcase</a></li>
         
       
       
@@ -158,7 +158,7 @@ if (!doNotTrack) {
     <div class="spacer"></div>
     <ul class="language-selector">
       <ul class="language-selector-current">
-          <li>Chinese ▾</li>
+          <li>English ▾</li>
       </ul>
       <ul class="language-selector__more hidden">
         
@@ -174,11 +174,11 @@ if (!doNotTrack) {
   <ul class="menu__inner menu__inner--mobile">
     
       
-        <li><a href="/zh/about">About</a></li>
+        <li><a href="/about">About</a></li>
       
     
       
-        <li><a href="/zh/showcase">Showcase</a></li>
+        <li><a href="/showcase">Showcase</a></li>
       
     
     
@@ -204,7 +204,7 @@ if (!doNotTrack) {
     
 <div class="post">
   <h1 class="post-title">
-    <a href="https://conight.com/zh/posts/hugo-with-progressive-web-app/">Hugo 与 PWA</a></h1>
+    <a href="https://conight.com/posts/hugo-with-progressive-web-app/">Hugo with PWA</a></h1>
   <div class="post-meta">
     
       <span class="post-date">
@@ -223,32 +223,32 @@ if (!doNotTrack) {
   
   <span class="post-tags">
     
-    #<a href="https://conight.com/zh/tags/hugo/">Hugo</a>&nbsp;
+    #<a href="https://conight.com/tags/hugo/">Hugo</a>&nbsp;
     
-    #<a href="https://conight.com/zh/tags/pwa/">PWA</a>&nbsp;
+    #<a href="https://conight.com/tags/pwa/">PWA</a>&nbsp;
     
-    #<a href="https://conight.com/zh/tags/web/">WEB</a>&nbsp;
+    #<a href="https://conight.com/tags/web/">WEB</a>&nbsp;
     
   </span>
   
   
   <img src="https://conight.com/posts_assets/attachment/hugo-with-progressive-web-app/DeviceUsage.webp"
     class="post-cover"
-    alt="Hugo 与 PWA"
+    alt="Hugo with PWA"
     title="Cover Image" />
 
 
   
 
   <div class="post-content"><div>
-        <p><code>Progressive Web App (PWA)</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 作为 <code>Google</code> 在 <code>2016</code> 年提出的概念，目的是让网页体验更加接近于原生应用。</p>
-<p>本文记录把 PWA 结合 Hugo<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 的过程，使个人博客更加现代化。</p>
+        <p>To make the web experience closer to native applications,
+Google introduced the concept of <code>Progressive Web App (PWA)</code> at 2016.</p>
+<p>We will cook it with Hugo<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> to make Hugo more modernization.</p>
 <h1 id="service-workers">Service Workers<a href="#service-workers" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<h2 id="注册">注册<a href="#注册" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<p>首先对 <code>Hugo</code> 添加 <code>Service Workers</code> 支持的 <code>Js</code> 文件：<code>sw.js</code>。
-文件可从 <a href="https://github.com/wildhaber/offline-first-sw">offline-first-sw</a> 下载。</p>
-<p>文件下载之后，放置到 <code>Hugo</code> 可读取的目录下。比如 <code>/static</code> 目录。</p>
-<p>创建一个 <code>footer</code> 的 <code>Partial Templates</code> 并添加注册 <code>Service Workers</code> 的代码。</p>
+<h2 id="register">Register<a href="#register" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>First we add <code>sw.js</code> from <a href="https://github.com/wildhaber/offline-first-sw">offline-first-sw</a> make Hugo support <code>Service Workers</code>.</p>
+<p>After download, put it to Hugo&rsquo;s readable directory. Eg. <code>/static</code></p>
+<p>Add or modify <code>footer</code> based <code>Partial Templates</code>, then add code to register <code>Service Workers</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#e6db74">&#39;serviceWorker&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">navigator</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PREFETCH</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PREFETCH_LINK_RELS</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;index&#39;</span>,<span style="color:#e6db74">&#39;next&#39;</span>, <span style="color:#e6db74">&#39;prev&#39;</span>, <span style="color:#e6db74">&#39;prefetch&#39;</span>];
@@ -286,13 +286,16 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>            }
 </span></span><span style="display:flex;"><span>        });
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="配置">配置<a href="#配置" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+</span></span></code></pre></div><h2 id="configuration">Configuration<a href="#configuration" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <h3 id="cache_version--number-">CACHE_VERSION <code>{ number }</code><a href="#cache_version--number-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-<p>声明当前 <code>Web APP</code> 的版本，需要根据缓存的文件目录来决定是否更新版本号。
-只有版本号变更，浏览器才会缓存新的资源文件并替换旧版本下的缓存。</p>
+<blockquote>
+<p>The CACHE_VERSION is important when you update your service-worker. The cache-location will be updated and the old legacy cache is getting deleted.</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CACHE_VERSION</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
 </span></span></code></pre></div><h3 id="base_cache_files--array-">BASE_CACHE_FILES <code>{ array }</code><a href="#base_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-<p>定义始终需要缓存的文件、页面路径。</p>
+<blockquote>
+<p>Define files that in this list which always needs to be cached from the beginning.</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">BASE_CACHE_FILES</span> <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// page cache
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;/&#39;</span>,
@@ -309,30 +312,38 @@ if (!doNotTrack) {
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;/favicon.ico&#39;</span>,
 </span></span><span style="display:flex;"><span>];
 </span></span></code></pre></div><h3 id="offline_cache_files--array-">OFFLINE_CACHE_FILES <code>{ array }</code><a href="#offline_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-<p>定义离线页面所需的文件。</p>
+<blockquote>
+<p>Define files necessary for your offline page.</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">OFFLINE_CACHE_FILES</span> <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;/offline.html&#39;</span>,
 </span></span><span style="display:flex;"><span>];
 </span></span></code></pre></div><h3 id="not_found_cache_files--array-">NOT_FOUND_CACHE_FILES <code>{ array }</code><a href="#not_found_cache_files--array-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-<p>定义 404 页面所需的文件。</p>
+<blockquote>
+<p>Define files necessary for your 404 page.</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">NOT_FOUND_CACHE_FILES</span> <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;/404.html&#39;</span>,
 </span></span><span style="display:flex;"><span>];
 </span></span></code></pre></div><h3 id="cache_blacklist--array">CACHE_BLACKLIST <code>{ array}</code><a href="#cache_blacklist--array" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-<p>资源缓存黑名单，在这个名单中的地址、域名不会缓存资源。建议不要包含本地测试地址。</p>
+<blockquote>
+<p>This is a list of functions a URL gets checked against if it should be cached or not.
+If one method returns true this resource will not be cached.</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">CACHE_BLACKLIST</span> <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">str</span>) =&gt; {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">startsWith</span>(<span style="color:#e6db74">&#39;https://conight.com&#39;</span>);
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// return !str.startsWith(&#39;http://localhost&#39;) &amp;&amp; !str.startsWith(&#39;https://conight.com&#39;);
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    },
 </span></span><span style="display:flex;"><span>];
-</span></span></code></pre></div><p><code>Chrome</code> 卡法这模式下 <code>Cache Storage</code> 中根据配置缓存的各种资源：</p>
+</span></span></code></pre></div><p>It will cache all you specified resource or path.
+You&rsquo;ll find it in Chrome&rsquo;s <code>Developer's Tools -&gt; Cache Storage</code> tab.</p>
 <p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/Cache.webp" alt="Cache Storage" title="Cache Storage">
 <em>Cache Storage</em></p>
 <h1 id="manifestjson">manifest.json<a href="#manifestjson" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p><code>manifest</code> 可以理解为 <code>PWA</code> 对于浏览器的声明文件。告诉浏览器该怎么安装你的 <code>PWA</code>。
-具体字段定义可参考 <a href="https://developers.google.com/web/fundamentals/web-app-manifest/">官方文档</a> 。</p>
-<p>下面是我博客的 <code>manifest</code>：</p>
+<p><code>manifest</code> is a decliner file to tell browser how is your PWA look like,.
+You can find all manifest properties at <a href="https://developers.google.com/web/fundamentals/web-app-manifest/">Official website</a> 。</p>
+<p>My blog&rsquo;s <code>manifest</code> blow:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Conight&#39;s Blog&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;short_name&#34;</span>: <span style="color:#e6db74">&#34;Conight&#39;s Blog&#34;</span>,
@@ -356,37 +367,32 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;theme_color&#34;</span>: <span style="color:#e6db74">&#34;#222128&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ul>
-<li>必须有 <code>name</code> 或者 <code>short_name</code> 其一。</li>
-<li>声明图标。也就是 <code>icons</code> 域。<code>Google</code> 官方建议 <code>provide icons in increments of 48dp</code> 。
-可以使用在线工具 <a href="https://favicomatic.com/">favicomatic.com</a> 或 <a href="https://realfavicongenerator.net/">realfavicongenerator.net</a></li>
+<li>You must provide at least the <code>short_name</code> or <code>name</code> property.</li>
+<li><code>icons</code> is an array of image objects. Each object should include the src, a sizes property, and the type of image.
+You can use online tools if you like: <a href="https://favicomatic.com/">favicomatic.com</a> or <a href="https://realfavicongenerator.net/">realfavicongenerator.net</a>.</li>
 </ul>
-<p>放置 <code>manifest</code> 文件到网站目录并包含到 <code>head</code> 模板中。</p>
+<p>Then put it in <code>head</code> template:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manifest&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/manifest.json&#34;</span>&gt;
 </span></span></code></pre></div><ul>
-<li><a href="https://realfavicongenerator.net/">realfavicongenerator.net</a> 网站生成的全套图标及资源文件中包含 <code>manifest</code> ，注意更改。</li>
+<li>It will automatic contain <code>manifest</code> file if you use <a href="https://realfavicongenerator.net/">realfavicongenerator.net</a>.</li>
 </ul>
 <h1 id="lighthouse">Lighthouse<a href="#lighthouse" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>使用 <code>Chrome</code> 自带的检测工具测试下网站对 <code>PWA</code> 的支持。</p>
 <blockquote>
 <p>Lighthouse, an open-source, automated tool for improving the quality of your Progressive Web Apps,
 eliminates much of the manual testing that was previously required.
 You can even use Lighthouse in continuous integration systems to catch regressions.</p>
 </blockquote>
-<p>进入 <code>Chrome</code> 开发者模式，选择 <code>Audits</code> 功能，注意勾选 <code>Audits -&gt; Progressive Web Apps</code>。
-检测完成后会有支持情况的一个清单。</p>
+<p>Enter Chrome&rsquo;s <code>Developer's Tools -&gt; Audits</code>, and check <code>Progressive Web Apps</code>.
+After tests, it will show you website&rsquo;s report.</p>
 <p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/Lighthouse.webp" alt="Lighthouse" title="Lighthouse">
 <em>Lighthouse PWA Audits</em></p>
-<p>所有的配置完成后，所有支持 <code>PWA</code> 的浏览器就会显示可安装的按钮或提示。</p>
+<p>If configure right, browser which support PWA will show <code>Install</code> button or notice you add to desktop.</p>
 <p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/InstallNotice.webp" alt="Install Notice" title="InstallNotice">
 <em>Install Notice</em></p>
-<p>如果没有提示或显示可安装，可进入 <code>Chrome</code> 开发者模式下 <code>Application -&gt; Manifest</code>，
-其中 <code>Installability</code> 下则会提示可能的无法安装的原因：</p>
+<p>If not, Enter Chrome&rsquo;s <code>Developer's Tools -&gt; Manifest</code> and <code>Installability</code> may show reason.</p>
 <p><img src="/posts_assets/attachment/hugo-with-progressive-web-app/Installability.webp" alt="Installability" title="Installability">
 <em>Manifest Installability</em></p>
-<ul>
-<li>示例图中无法安装是因为处于隐私模式。</li>
-</ul>
-<h2 id="拓展阅读">拓展阅读<a href="#拓展阅读" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="expand">Expand<a href="#expand" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <ul>
 <li><a href="https://blog.jeremylikness.com/blog/implement-progressive-web-app-hugo/">Implement a Progressive Web App (PWA) in your Static Website</a></li>
 <li><a href="https://github.com/wildhaber/offline-first-sw">offline-first-sw</a></li>
@@ -396,10 +402,7 @@ You can even use Lighthouse in continuous integration systems to catch regressio
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>渐进式增强WEB应用。<a href="https://developers.google.com/web/progressive-web-apps" title="PWA">官网</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>基于 <code>Golang</code> 的个人静态博客框架。<a href="https://gohugo.io/" title="Hugo">官网</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><code>Golang</code> Based static blog framework. <a href="https://gohugo.io/" title="Hugo">Official website</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -417,8 +420,8 @@ You can even use Lighthouse in continuous integration systems to catch regressio
         
         
         <span class="button next">
-            <a href="https://conight.com/zh/posts/fix-python-compile-uuid-error/">
-                <span class="button__text">Python 源码编译时 uuid 模块报错</span>
+            <a href="https://conight.com/posts/fix-python-compile-uuid-error/">
+                <span class="button__text">Compile install python raise uuid error on Centos</span>
                 <span class="button__icon">→</span>
             </a>
         </span>

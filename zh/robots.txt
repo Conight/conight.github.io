@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /en/
+Allow: /zh/
+
+Disallow: /assets/
+Disallow: /*.js$
+Disallow: /*.json$
+
